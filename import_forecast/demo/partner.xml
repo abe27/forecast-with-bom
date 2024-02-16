@@ -1,0 +1,312 @@
+<odoo>
+    <data noupdate="1">
+        <record id="res_partner_category_101" model="res.partner.category">
+            <field name="name">Test/Vendor/Supplier</field>
+            <field name="color" eval="10" />
+        </record>
+
+        <record id="res_partner_category_abe_101" model="res.partner.category">
+            <field name="name">ABE</field>
+            <field name="color" eval="3" />
+        </record>
+
+        <record id="res_partner_category_vcs_101" model="res.partner.category">
+            <field name="name">VCS</field>
+            <field name="color" eval="8" />
+        </record>
+
+        <!-- Partner VCS Group -->
+
+        <record id="res_partner_vcs_0" model="res.partner">
+            <field name="name">V.C.S. (THAILAND) COMPANY LIMITED</field>
+            <field eval="[Command.set([ref('res_partner_category_abe_101'),ref('res_partner_category_vcs_101')])]" name="category_id" />
+            <field name="is_company">1</field>
+            <field name="street">8 หมู่ที่ 3 </field>
+            <field name="city">ตำบลหนองจอก อำเภอบางปะกง จ.ฉะเชิงเทรา</field>
+            <!-- <field name="state_id" ref='state_th_006'/> -->
+            <field name="zip">24130</field>
+            <field name="phone">(66)-205-5899</field>
+            <!-- <field name="country_id" ref="base.th"/> -->
+            <field name="email">taweechai.yuenyang@outlook.com</field>
+            <field name="website">https://vcsthailand.co.th/</field>
+            <field name="image_1920" type="base64" file="import_forecast/static/description/vcs.png" />
+            <field name="vat">0105548017381,0105548017382</field>
+        </record>
+
+        <!-- contact vcs -->
+        <record id="work_contact_surasit_0" model="res.partner">
+            <field name="name">Surasit J.</field>
+            <field name="function">Programmer</field>
+            <field name="parent_id" ref="res_partner_vcs_0" />
+            <field eval="[Command.set([ref('res_partner_category_101'),ref('res_partner_category_abe_101'),ref('res_partner_category_vcs_101')])]" name="category_id" />
+            <field name="street">8 หมู่ที่ 3 </field>
+            <field name="city">ตำบลหนองจอก อำเภอบางปะกง จ.ฉะเชิงเทรา</field>
+            <!-- <field name="state_id" ref='state_th_006'/> -->
+            <field name="zip">24130</field>
+            <field name="phone">(66)-205-5899</field>
+            <field name="email">surasit.j@vcsgroup.co.th</field>
+            <field name="website">https://vcsgroupthai.com</field>
+            <field name="image_1920" type="base64"
+                file="import_forecast/static/description/Surasit.jpg" />
+        </record>
+
+        <record id="work_contact_surasit_user_0" model="res.partner">
+            <field name="name">User 0.</field>
+            <field name="function">Programmer</field>
+            <field name="parent_id" ref="res_partner_vcs_0" />
+            <field eval="[Command.set([ref('res_partner_category_101'),ref('res_partner_category_abe_101'),ref('res_partner_category_vcs_101')])]" name="category_id" />
+            <field name="street">8 หมู่ที่ 3 </field>
+            <field name="city">ตำบลหนองจอก อำเภอบางปะกง จ.ฉะเชิงเทรา</field>
+            <!-- <field name="state_id" ref='state_th_006'/> -->
+            <field name="zip">24130</field>
+            <field name="phone">(66)-205-5899</field>
+            <field name="email">surasit.j@vcsgroup.co.th</field>
+            <field name="website">https://vcsgroupthai.com</field>
+            <field name="image_1920" type="base64"
+                file="import_forecast/static/description/user_0.png" />
+        </record>
+
+        <record id="work_contact_surasit_user_1" model="res.partner">
+            <field name="name">User 1.</field>
+            <field name="function">Programmer</field>
+            <field name="parent_id" ref="res_partner_vcs_0" />
+            <field eval="[Command.set([ref('res_partner_category_101'),ref('res_partner_category_abe_101'),ref('res_partner_category_vcs_101')])]" name="category_id" />
+            <field name="street">8 หมู่ที่ 3 </field>
+            <field name="city">ตำบลหนองจอก อำเภอบางปะกง จ.ฉะเชิงเทรา</field>
+            <!-- <field name="state_id" ref='state_th_006'/> -->
+            <field name="zip">24130</field>
+            <field name="phone">(66)-205-5899</field>
+            <field name="email">surasit.j@vcsgroup.co.th</field>
+            <field name="website">https://vcsgroupthai.com</field>
+            <field name="image_1920" type="base64"
+                file="import_forecast/static/description/user_1.png" />
+        </record>
+
+        <record id="work_contact_surasit_user_2" model="res.partner">
+            <field name="name">User 2</field>
+            <field name="function">Programmer</field>
+            <field name="parent_id" ref="res_partner_vcs_0" />
+            <field eval="[Command.set([ref('res_partner_category_101'),ref('res_partner_category_abe_101'),ref('res_partner_category_vcs_101')])]" name="category_id" />
+            <field name="street">8 หมู่ที่ 3 </field>
+            <field name="city">ตำบลหนองจอก อำเภอบางปะกง จ.ฉะเชิงเทรา</field>
+            <!-- <field name="state_id" ref='state_th_006'/> -->
+            <field name="zip">24130</field>
+            <field name="phone">(66)-205-5899</field>
+            <field name="email">surasit.j@vcsgroup.co.th</field>
+            <field name="website">https://vcsgroupthai.com</field>
+            <field name="image_1920" type="base64"
+                file="import_forecast/static/description/user_2.png" />
+        </record>
+
+        <record id="work_contact_surasit_user_3" model="res.partner">
+            <field name="name">User 3</field>
+            <field name="function">Programmer</field>
+            <field name="parent_id" ref="res_partner_vcs_0" />
+            <field eval="[Command.set([ref('res_partner_category_101'),ref('res_partner_category_abe_101'),ref('res_partner_category_vcs_101')])]" name="category_id" />
+            <field name="street">8 หมู่ที่ 3 </field>
+            <field name="city">ตำบลหนองจอก อำเภอบางปะกง จ.ฉะเชิงเทรา</field>
+            <!-- <field name="state_id" ref='state_th_006'/> -->
+            <field name="zip">24130</field>
+            <field name="phone">(66)-205-5899</field>
+            <field name="email">surasit.j@vcsgroup.co.th</field>
+            <field name="website">https://vcsgroupthai.com</field>
+            <field name="image_1920" type="base64"
+                file="import_forecast/static/description/user_3.png" />
+        </record>
+
+        <record id="work_contact_surasit_user_4" model="res.partner">
+            <field name="name">User 4</field>
+            <field name="function">Programmer</field>
+            <field name="parent_id" ref="res_partner_vcs_0" />
+            <field eval="[Command.set([ref('res_partner_category_101'),ref('res_partner_category_abe_101'),ref('res_partner_category_vcs_101')])]" name="category_id" />
+            <field name="street">8 หมู่ที่ 3 </field>
+            <field name="city">ตำบลหนองจอก อำเภอบางปะกง จ.ฉะเชิงเทรา</field>
+            <!-- <field name="state_id" ref='state_th_006'/> -->
+            <field name="zip">24130</field>
+            <field name="phone">(66)-205-5899</field>
+            <field name="email">surasit.j@vcsgroup.co.th</field>
+            <field name="website">https://vcsgroupthai.com</field>
+            <field name="image_1920" type="base64"
+                file="import_forecast/static/description/user_4.png" />
+        </record>
+
+        <record id="work_contact_surasit_user_5" model="res.partner">
+            <field name="name">User 5</field>
+            <field name="function">Programmer</field>
+            <field name="parent_id" ref="res_partner_vcs_0" />
+            <field eval="[Command.set([ref('res_partner_category_101'),ref('res_partner_category_abe_101'),ref('res_partner_category_vcs_101')])]" name="category_id" />
+            <field name="street">8 หมู่ที่ 3 </field>
+            <field name="city">ตำบลหนองจอก อำเภอบางปะกง จ.ฉะเชิงเทรา</field>
+            <!-- <field name="state_id" ref='state_th_006'/> -->
+            <field name="zip">24130</field>
+            <field name="phone">(66)-205-5899</field>
+            <field name="email">surasit.j@vcsgroup.co.th</field>
+            <field name="website">https://vcsgroupthai.com</field>
+            <field name="image_1920" type="base64"
+                file="import_forecast/static/description/user_5.png" />
+        </record>
+
+        <record id="work_contact_surasit_user_6" model="res.partner">
+            <field name="name">User 6</field>
+            <field name="function">Programmer</field>
+            <field name="parent_id" ref="res_partner_vcs_0" />
+            <field eval="[Command.set([ref('res_partner_category_101'),ref('res_partner_category_abe_101'),ref('res_partner_category_vcs_101')])]" name="category_id" />
+            <field name="street">8 หมู่ที่ 3 </field>
+            <field name="city">ตำบลหนองจอก อำเภอบางปะกง จ.ฉะเชิงเทรา</field>
+            <!-- <field name="state_id" ref='state_th_006'/> -->
+            <field name="zip">24130</field>
+            <field name="phone">(66)-205-5899</field>
+            <field name="email">surasit.j@vcsgroup.co.th</field>
+            <field name="website">https://vcsgroupthai.com</field>
+            <field name="image_1920" type="base64"
+                file="import_forecast/static/description/user_6.png" />
+        </record>
+
+        <record id="work_contact_surasit_user_7" model="res.partner">
+            <field name="name">User 7</field>
+            <field name="function">Programmer</field>
+            <field name="parent_id" ref="res_partner_vcs_0" />
+            <field eval="[Command.set([ref('res_partner_category_101'),ref('res_partner_category_abe_101'),ref('res_partner_category_vcs_101')])]" name="category_id" />
+            <field name="street">8 หมู่ที่ 3 </field>
+            <field name="city">ตำบลหนองจอก อำเภอบางปะกง จ.ฉะเชิงเทรา</field>
+            <!-- <field name="state_id" ref='state_th_006'/> -->
+            <field name="zip">24130</field>
+            <field name="phone">(66)-205-5899</field>
+            <field name="email">surasit.j@vcsgroup.co.th</field>
+            <field name="website">https://vcsgroupthai.com</field>
+            <field name="image_1920" type="base64"
+                file="import_forecast/static/description/user_7.png" />
+        </record>
+
+        <record id="work_contact_surasit_user_8" model="res.partner">
+            <field name="name">User 8</field>
+            <field name="function">Programmer</field>
+            <field name="parent_id" ref="res_partner_vcs_0" />
+            <field eval="[Command.set([ref('res_partner_category_101'),ref('res_partner_category_abe_101'),ref('res_partner_category_vcs_101')])]" name="category_id" />
+            <field name="street">8 หมู่ที่ 3 </field>
+            <field name="city">ตำบลหนองจอก อำเภอบางปะกง จ.ฉะเชิงเทรา</field>
+            <!-- <field name="state_id" ref='state_th_006'/> -->
+            <field name="zip">24130</field>
+            <field name="phone">(66)-205-5899</field>
+            <field name="email">surasit.j@vcsgroup.co.th</field>
+            <field name="website">https://vcsgroupthai.com</field>
+            <field name="image_1920" type="base64"
+                file="import_forecast/static/description/user_8.png" />
+        </record>
+
+        <record id="work_contact_surasit_user_9" model="res.partner">
+            <field name="name">User 9</field>
+            <field name="function">Programmer</field>
+            <field name="parent_id" ref="res_partner_vcs_0" />
+            <field eval="[Command.set([ref('res_partner_category_101'),ref('res_partner_category_abe_101'),ref('res_partner_category_vcs_101')])]" name="category_id" />
+            <field name="street">8 หมู่ที่ 3 </field>
+            <field name="city">ตำบลหนองจอก อำเภอบางปะกง จ.ฉะเชิงเทรา</field>
+            <!-- <field name="state_id" ref='state_th_006'/> -->
+            <field name="zip">24130</field>
+            <field name="phone">(66)-205-5899</field>
+            <field name="email">surasit.j@vcsgroup.co.th</field>
+            <field name="website">https://vcsgroupthai.com</field>
+            <field name="image_1920" type="base64"
+                file="import_forecast/static/description/user_9.png" />
+        </record>
+
+        <record id="work_contact_surasit_user_10" model="res.partner">
+            <field name="name">User 10</field>
+            <field name="function">Programmer</field>
+            <field name="parent_id" ref="res_partner_vcs_0" />
+            <field eval="[Command.set([ref('res_partner_category_101'),ref('res_partner_category_abe_101'),ref('res_partner_category_vcs_101')])]" name="category_id" />
+            <field name="street">8 หมู่ที่ 3 </field>
+            <field name="city">ตำบลหนองจอก อำเภอบางปะกง จ.ฉะเชิงเทรา</field>
+            <!-- <field name="state_id" ref='state_th_006'/> -->
+            <field name="zip">24130</field>
+            <field name="phone">(66)-205-5899</field>
+            <field name="email">surasit.j@vcsgroup.co.th</field>
+            <field name="website">https://vcsgroupthai.com</field>
+            <field name="image_1920" type="base64"
+                file="import_forecast/static/description/user_10.png" />
+        </record>
+
+        <!-- end -->
+
+        <record id="res_partner_taweechai_0" model="res.partner">
+            <field name="name">Taweechai Industry</field>
+            <field eval="[Command.set([ref('res_partner_category_101')])]" name="category_id" />
+            <field name="is_company">1</field>
+            <field name="street">197/121 Moo 7 Smilehouse3</field>
+            <field name="city">Wangyen, Plangyao</field>
+            <!-- <field name="state_id" ref='state_th_006'/> -->
+            <field name="zip">24190</field>
+            <field name="phone">(66)-109-0602</field>
+            <!-- <field name="country_id" ref="base.th"/> -->
+            <field name="email">taweechai.yuenyang@outlook.com</field>
+            <field name="website">https://taweechai.yuenyang.github.io</field>
+            <field name="image_1920" type="base64"
+                file="import_forecast/static/description/company.png" />
+            <field name="vat">TH12345677</field>
+        </record>
+
+        <record id="work_contact_taweechai_0" model="res.partner">
+            <field name="name">Taweechai Yuenyang</field>
+            <field name="function">Programmer</field>
+            <field name="parent_id" ref="res_partner_taweechai_0" />
+            <field name="street">197/121 Moo 7 Smilehouse3</field>
+            <field name="city">Wangyen, Plangyao</field>
+            <!-- <field name="state_id" ref='state_th_006'/> -->
+            <!-- <field name="country_id" ref="base.th"/> -->
+            <field name="zip">24190</field>
+            <field name="phone">(66)-109-0602</field>
+            <field name="email">taweechai.yuenyang@outlook.com</field>
+            <field name="website">https://taweechai.yuenyang.github.io</field>
+            <field name="image_1920" type="base64"
+                file="import_forecast/static/description/taweechai.jpg" />
+        </record>
+
+        <record id="work_contact_taweechai_1" model="res.partner">
+            <field name="name">Sunchai J.</field>
+            <field name="function">Administrator</field>
+            <field name="parent_id" ref="res_partner_taweechai_0" />
+            <field name="street">197/121 Moo 7 Smilehouse3</field>
+            <field name="city">Wangyen, Plangyao</field>
+            <!-- <field name="state_id" ref='state_th_006'/> -->
+            <!-- <field name="country_id" ref="base.th"/> -->
+            <field name="zip">24190</field>
+            <field name="phone">(66)-109-0602</field>
+            <field name="email">taweechai.yuenyang@outlook.com</field>
+            <field name="website">https://taweechai.yuenyang.github.io</field>
+            <field name="image_1920" type="base64"
+                file="import_forecast/static/description/sunchai.jpg" />
+        </record>
+
+        <record id="work_contact_taweechai_3" model="res.partner">
+            <field name="name">Chakarin D.</field>
+            <field name="function">IT Support</field>
+            <field name="parent_id" ref="res_partner_taweechai_0" />
+            <field name="street">197/121 Moo 7 Smilehouse3</field>
+            <field name="city">Wangyen, Plangyao</field>
+            <!-- <field name="state_id" ref='state_th_006'/>
+        <field name="country_id" ref="base.th"/> -->
+            <field name="zip">24190</field>
+            <field name="phone">(66)-109-0602</field>
+            <field name="email">taweechai.yuenyang@outlook.com</field>
+            <field name="website">https://taweechai.yuenyang.github.io</field>
+            <field name="image_1920" type="base64"
+                file="import_forecast/static/description/chakarin.jpg" />
+        </record>
+
+        <record id="work_contact_taweechai_4" model="res.partner">
+            <field name="name">Bigboss</field>
+            <field name="function">Manager General</field>
+            <field name="parent_id" ref="res_partner_taweechai_0" />
+            <field name="street">197/121 Moo 7 Smilehouse3</field>
+            <field name="city">Wangyen, Plangyao</field>
+            <!-- <field name="state_id" ref='state_th_006'/>
+        <field name="country_id" ref="base.th"/> -->
+            <field name="zip">24190</field>
+            <field name="phone">(66)-109-0602</field>
+            <field name="email">taweechai.yuenyang@outlook.com</field>
+            <field name="website">https://taweechai.yuenyang.github.io</field>
+            <field name="image_1920" type="base64"
+                file="import_forecast/static/description/user.jpg" />
+        </record>
+    </data>
+</odoo>

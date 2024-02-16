@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tkk_edn_tkk_edn,tkk_edn.tkk_edn,model_tkk_edn_tkk_edn,base.group_user,1,1,1,1

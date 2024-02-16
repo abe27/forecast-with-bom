@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Part Category -->
+        <record id="product_category_all" model="product.category">
+            <field name="name">All</field>
+        </record>
+
+        <!-- ### Product Vendor #### -->
+        <record id="product_category_tkk_all" model="product.category">
+            <field name="parent_id" ref="product_category_all" />
+            <field name="name">TKKC</field>
+        </record>
+
+        <!-- #### Part Group ##### -->
+        <record id="product_edn_part_type_tkk_isuzu" model="product.category">
+            <field name="parent_id" ref="product_category_tkk_all"/>
+            <field name="name">ISUZU</field>
+        </record>
+
+        <record id="product_edn_part_type_tkk_toyota" model="product.category">
+            <field name="parent_id" ref="product_category_tkk_all"/>
+            <field name="name">TOYOTA</field>
+        </record>
+
+        <!-- Part Isuzu -->
+        <record id="product_category_tkk_isuzu_domestic" model="product.category">
+            <field name="parent_id" ref="product_edn_part_type_tkk_isuzu"/>
+            <field name="name">Domestic</field>
+        </record>
+        <record id="product_category_tkk_isuzu_export" model="product.category">
+            <field name="parent_id" ref="product_edn_part_type_tkk_isuzu"/>
+            <field name="name">Export</field>
+        </record>
+
+        <!-- Part Toyota -->
+        <record id="product_category_tkk_toyota_domestic" model="product.category">
+            <field name="parent_id" ref="product_edn_part_type_tkk_toyota"/>
+            <field name="name">Domestic</field>
+        </record>
+        <record id="product_category_tkk_toyota_export" model="product.category">
+            <field name="parent_id" ref="product_edn_part_type_tkk_toyota"/>
+            <field name="name">Export</field>
+        </record>
+    </data>
+</odoo>

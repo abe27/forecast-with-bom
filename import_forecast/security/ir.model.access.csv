@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_import_forecast_forecast,import_forecast.forecast,model_import_forecast_forecast,base.group_user,1,1,1,1
+access_import_forecast_forecast_detail,import_forecast.forecast_detail,model_import_forecast_forecast_detail,base.group_user,1,1,1,1

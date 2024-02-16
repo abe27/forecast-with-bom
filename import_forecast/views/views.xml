@@ -1,0 +1,25 @@
+<odoo>
+  <data>
+    <record model="ir.actions.act_window" id="forecast_action_window">
+      <field name="name">นำเข้าข้อมูล Forecast</field>
+      <field name="res_model">import_forecast.forecast</field>
+      <field name="view_mode">kanban,calendar,tree,form</field>
+      <field name="context">{}</field>
+    </record>
+    <record model="ir.actions.act_window" id="forecast_detail_action_window">
+      <field name="name">นำเข้าข้อมูล Forecast Detail</field>
+      <field name="res_model">import_forecast.forecast_detail</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="Import Forecast" web_icon="import_forecast,static/description/icon.png"
+      sequence="0" id="import_forecast.menu_root" />
+    <!-- menu categories -->
+    <menuitem name="Forecast" id="import_forecast.menu_forecast" sequence="0"
+      parent="import_forecast.menu_root" />
+    <!-- actions -->
+    <menuitem name="Forecast List" id="import_forecast.menu_forecast_list" sequence="0"
+      parent="import_forecast.menu_forecast" action="forecast_action_window" />
+  </data>
+</odoo>

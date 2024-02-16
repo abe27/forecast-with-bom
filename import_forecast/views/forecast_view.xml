@@ -1,0 +1,165 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+        <record id="import_forecast.kanban" model="ir.ui.view">
+            <field name="name">นำเข้าข้อมูล Forecast</field>
+            <field name="model">import_forecast.forecast</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <field name="img_partner" widget="image"
+                                            options="{'size': [95, 95]}" />
+                                    </div>
+                                    <div class="col">
+                                        <div class="">
+                                            <div class="p-2">
+                                                <div class="p-1">
+                                                    <field name="partner_id" class="text-primary" />
+                                                </div>
+                                                <div class="p-1">On Month:<field name="_on_month" class="text-info" />
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-4">
+                                                        <field name="revise_level" string="Revise:" widget="badge" />
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <field name="is_status" widget="badge" decoration-success="is_status == '2'" decoration-primary="is_status == '1'" decoration-danger="is_status == '0'"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="import_forecast.list">
+            <field name="name">นำเข้าข้อมูล Forecast</field>
+            <field name="model">import_forecast.forecast</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="partner_id" widget="many2one_avatar_contact" optional="show" />
+                    <field name="on_month" widget="date" optional="show" />
+                    <field name="revise_level" widget="selection_badge" optional="show" />
+                    <field name="create_date" string="Upload On" optional="show" />
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="import_forecast.form">
+            <field name="name">นำเข้าข้อมูล Forecast</field>
+            <field name="model">import_forecast.forecast</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header class="d-flex d-flex justify-content-end">
+                        <field name="is_status" widget="statusbar"  />
+                    </header>
+                    <sheet>
+                        <group col="2">
+                            <group col="1">
+                                <group>
+                                    <field name="partner_id" />
+                                </group>
+                                <group>
+                                    <field name="partner_street" string="Street" class="text-info" />
+                                </group>
+                                <group col="2">
+                                    <group>
+                                        <field name="partner_city" string="City" class="text-info" />
+                                    </group>
+                                    <group>
+                                        <field name="partner_zip" string="Zipcode" class="text-info" />
+                                    </group>
+                                </group>
+                                <group>
+                                    <field name="partner_country_id" string="Country"
+                                        class="text-info" />
+                                </group>
+                                <group col="2">
+                                    <group>
+                                        <field name="partner_phone" string="Phone" class="text-info" />
+                                    </group>
+                                    <group>
+                                        <field name="partner_mobile" string="Mobile"
+                                            class="text-info" />
+                                    </group>
+                                </group>
+                                <group>
+                                    <field name="partner_email" string="E-Mail" class="text-info" />
+                                </group>
+                                <group>
+                                    <field name="partner_website" string="Website" class="text-info" />
+                                </group>
+                                <group>
+                                    <field name="partner_tag" string="Tags" class="text-info" />
+                                </group>
+                                <separator colspan="1" />
+                            </group>
+                            <group>
+                                <field name="img_partner" widget="image" class="oe_avatar" string=""
+                                    options="{'size': [250, 250]}" />
+                            </group>
+                        </group>
+                        <separator colspan="4" />
+                        <group>
+                            <group>
+                                <field name="on_month" widget="date"/>
+                            </group>
+                            <group col="1">
+                                <field name="revise_level" />
+                            </group>
+                        </group>
+                        <group col="4">
+                            <field name="file_forecast_name" invisible="1" />
+                            <field name="file_forecast" filename="file_forecast_name" />
+                        </group>
+                        <notebook>
+                            <page name="Forecast Detail">
+                                <field name="line_ids" widget="one2many_list" editable="top">
+                                    <tree>
+                                        <field name="seq" string="No." />
+                                        <field name="part_id" string="Part Code"/>
+                                        <!-- <field name="part_name" string="Part Name" /> -->
+                                        <field name="qty" string="N" />
+                                        <field name="month_1" string="N+1" />
+                                        <field name="month_2" string="N+2" />
+                                        <field name="month_3" string="N+3" />
+                                        <field name="is_match" widget="badge" decoration-primary="is_match == '1'" decoration-danger="is_match == '0'"/>
+                                        <!-- <field name="create_date" string="Created On" /> -->
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" groups="base.group_user" />
+                        <field name="activity_ids" />
+                        <field name="message_ids" />
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- Form View Filter Product By Tag -->
+        <!-- End Form View Filter Product By Tag -->
+
+        <record id="import_forecast.calendar" model="ir.ui.view">
+            <field name="name">นำเข้าข้อมูล Forecast</field>
+            <field name="model">import_forecast.forecast</field>
+            <field name="arch" type="xml">
+                <calendar string="ข้อมูล Forecast" date_start="create_date" mode="month">
+                    <field name="name" />
+                    <field name="revise_level" />
+                </calendar>
+            </field>
+        </record>
+    </data>
+</odoo>
