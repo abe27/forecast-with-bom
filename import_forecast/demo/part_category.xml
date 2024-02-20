@@ -1,17 +1,24 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
     <data noupdate="1">
+        <record id="removal_fifo" model="product.removal">
+            <field name="name">First In First Out (FIFO)</field>
+            <field name="method">fifo</field>
+        </record>
         <record id="product_category_abe_1" model="product.category">
             <field name="parent_id" ref="product.product_category_all"/>
-            <field name="name">Abe Test</field>
+            <field name="name">Abe BoM</field>
+            <field name="removal_strategy_id" ref="removal_fifo" />
         </record>
         <record id="product_category_abe_domestic_1" model="product.category">
             <field name="parent_id" ref="product_category_abe_1"/>
             <field name="name">DOMESTIC</field>
+            <field name="removal_strategy_id" ref="removal_fifo" />
         </record>
         <record id="product_category_abe_export_1" model="product.category">
             <field name="parent_id" ref="product_category_abe_1"/>
             <field name="name">EXPORT</field>
+            <field name="removal_strategy_id" ref="removal_fifo" />
         </record>
     </data>
 </odoo>

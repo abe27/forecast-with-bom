@@ -222,3 +222,7 @@ class ForecastDetail(models.Model):
             
         return super().unlink()
     
+
+# class Product(models.Model):
+#     _inherit = "product.product"
+    

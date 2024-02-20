@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- <record id="product_product_tag_kanban_view" model="ir.ui.view">
+            <field name="name">product.product.kanban.expense</field>
+            <field name="inherit_id" ref="product.product_kanban_view"/>
+            <field name="mode">primary</field>
+            <field name="model">product.product</field>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='product_lst_price']" position="after">
+                    <div name="product_standard_price" class="mt-1">
+                        CostXX: <field name="product_tag_ids"/>
+                    </div>
+                </xpath>
+            </field>
+        </record> -->
+
+        <record id="product_view_kanban_catalog_tag" model="ir.ui.view">
+            <field name="name">product.view.kanban.catalog.inherit.stock</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_view_kanban_catalog"/>
+            <field name="arch" type="xml">
+                <field name="default_code" invisible="1" position="after">
+                    <field name="detailed_type" invisible="1"/>
+                </field>
+                <div name="o_kanban_price" position="after">
+                    <div t-if="record.detailed_type.raw_value != 'product'"
+                         name="o_kanban_qty_available">
+                        <span>On Hand Price: </span>
+                        <field name="qty_available"/>
+                        <field name="uom_id" class="ms-1" groups="uom.group_uom"/>
+                    </div>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>
