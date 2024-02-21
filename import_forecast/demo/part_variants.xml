@@ -1,0 +1,283 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data noupdate="1">
+        <!-- ### Components -->
+        <record id="product_product_abe_0_product" model="product.product">
+            <field name="name">COM AVSS 1.25F V</field>
+            <field name="categ_id" ref="product_category_abe_domestic_1" />
+            <field name="product_tag_ids"
+                eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="detailed_type">consu</field>
+            <field name="weight">0.0</field>
+            <field name="uom_id" ref="uom.product_uom_unit" />
+            <field name="uom_po_id" ref="uom.product_uom_unit" />
+            <field name="default_code">18007704192</field>
+            <field name="description_sale">AVSS 1.25F V</field>
+        </record>
+
+        <record id="product_product_abe_1_product" model="product.product">
+            <field name="name">COM AVSSCS-S 0.5FX2 DGY/G</field>
+            <field name="categ_id" ref="product_category_abe_domestic_1" />
+            <field name="product_tag_ids"
+                eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="detailed_type">consu</field>
+            <field name="weight">0.0</field>
+            <field name="uom_id" ref="uom.product_uom_unit" />
+            <field name="uom_po_id" ref="uom.product_uom_unit" />
+            <field name="default_code">181E50012ZZ</field>
+            <field name="description_sale">AVSSCS-S 0.5FX2 DGY/G</field>
+            <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
+        </record>
+
+        <record id="product_product_abe_2_product" model="product.product">
+            <field name="name">COM CAVSAS-S 0.3X1 GY/R</field>
+            <field name="categ_id" ref="product_category_abe_domestic_1" />
+            <field name="product_tag_ids"
+                eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="detailed_type">consu</field>
+            <field name="weight">0.0</field>
+            <field name="uom_id" ref="uom.product_uom_unit" />
+            <field name="uom_po_id" ref="uom.product_uom_unit" />
+            <field name="default_code">181E48010ZZ</field>
+            <field name="description_sale">CAVSAS-S 0.3X1 GY/R</field>
+            <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
+        </record>
+
+        <record id="product_product_abe_3_product" model="product.product">
+            <field name="name">COM IVSSH 0.5F GY</field>
+            <field name="categ_id" ref="product_category_abe_export_1" />
+            <field name="product_tag_ids"
+                eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="detailed_type">consu</field>
+            <field name="weight">0.0</field>
+            <field name="uom_id" ref="uom.product_uom_unit" />
+            <field name="uom_po_id" ref="uom.product_uom_unit" />
+            <field name="default_code">1801W003941</field>
+            <field name="description_sale">IVSSH 0.5F GY</field>
+            <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
+        </record>
+
+        <record id="product_product_abe_4_product" model="product.product">
+            <field name="name">COM IVSSH 0.5F BE</field>
+            <field name="categ_id" ref="product_category_abe_export_1" />
+            <field name="product_tag_ids"
+                eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="detailed_type">consu</field>
+            <field name="weight">0.0</field>
+            <field name="uom_id" ref="uom.product_uom_unit" />
+            <field name="uom_po_id" ref="uom.product_uom_unit" />
+            <field name="default_code">1801W00395U</field>
+            <field name="description_sale">IVSSH 0.5F BE</field>
+            <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
+        </record>
+
+        <record id="product_product_abe_4_0_product" model="product.product">
+            <field name="name">COM IVSSH 0.5F BE 001</field>
+            <field name="categ_id" ref="product_category_abe_export_1" />
+            <field name="product_tag_ids"
+                eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="detailed_type">consu</field>
+            <field name="weight">0.0</field>
+            <field name="uom_id" ref="uom.product_uom_unit" />
+            <field name="uom_po_id" ref="uom.product_uom_unit" />
+            <field name="default_code">1801W00395UX01</field>
+            <field name="description_sale">IVSSH 0.5F BE 001</field>
+            <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
+        </record>
+
+        <record id="product_product_abe_4_1_product" model="product.product">
+            <field name="name">COM IVSSH 0.5F BE 002</field>
+            <field name="categ_id" ref="product_category_abe_export_1" />
+            <field name="product_tag_ids"
+                eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="detailed_type">consu</field>
+            <field name="weight">0.0</field>
+            <field name="uom_id" ref="uom.product_uom_unit" />
+            <field name="uom_po_id" ref="uom.product_uom_unit" />
+            <field name="default_code">1801W00395UX02</field>
+            <field name="description_sale">IVSSH 0.5F BE 002</field>
+            <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
+        </record>
+
+        <!-- ### Part FG -->
+        <record id="product_product_abe_5_product" model="product.product">
+            <field name="name">TEST FG 001</field>
+            <field name="categ_id" ref="product_category_abe_export_1" />
+            <field name="product_tag_ids"
+                eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="detailed_type">product</field>
+            <field name="weight">0.0</field>
+            <field name="uom_id" ref="uom.product_uom_unit" />
+            <field name="uom_po_id" ref="uom.product_uom_unit" />
+            <field name="default_code">TC882-8100D</field>
+            <field name="description_sale">Frame Cab Comp</field>
+            <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
+            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+        </record>
+
+        <record id="product_product_abe_6_product" model="product.product">
+            <field name="name">COMP FRONT BLADE FD240 FG</field>
+            <field name="categ_id" ref="product_category_abe_export_1" />
+            <field name="product_tag_ids"
+                eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="detailed_type">product</field>
+            <field name="weight">0.0</field>
+            <field name="uom_id" ref="uom.product_uom_unit" />
+            <field name="uom_po_id" ref="uom.product_uom_unit" />
+            <field name="default_code">W9564-5361-1</field>
+            <field name="description_sale">COMP FRONT BLADE FD240</field>
+            <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
+            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+        </record>
+
+        <record id="product_product_abe_7_product" model="product.product">
+            <field name="name">COMP FRONT BLADE FD240 FG</field>
+            <field name="categ_id" ref="product_category_abe_export_1" />
+            <field name="product_tag_ids"
+                eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="detailed_type">product</field>
+            <field name="weight">0.0</field>
+            <field name="uom_id" ref="uom.product_uom_unit" />
+            <field name="uom_po_id" ref="uom.product_uom_unit" />
+            <field name="default_code">W955K-5301-2</field>
+            <field name="description_sale">COMP FRONT BLADE FD220J</field>
+            <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
+            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+        </record>
+
+        <record id="product_product_abe_8_product" model="product.product">
+            <field name="name">COMP FRONT BLADE FD220L FG</field>
+            <field name="categ_id" ref="product_category_abe_export_1" />
+            <field name="product_tag_ids"
+                eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="detailed_type">product</field>
+            <field name="weight">0.0</field>
+            <field name="uom_id" ref="uom.product_uom_unit" />
+            <field name="uom_po_id" ref="uom.product_uom_unit" />
+            <field name="default_code">W955Y-5301-2</field>
+            <field name="description_sale">COMP FRONT BLADE FD220L</field>
+            <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
+            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+        </record>
+
+        <record id="product_product_abe_9_product" model="product.product">
+            <field name="name">DOZER ARM FD240 FG</field>
+            <field name="categ_id" ref="product_category_abe_export_1" />
+            <field name="product_tag_ids"
+                eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="detailed_type">product</field>
+            <field name="weight">0.0</field>
+            <field name="uom_id" ref="uom.product_uom_unit" />
+            <field name="uom_po_id" ref="uom.product_uom_unit" />
+            <field name="default_code">W9564-5266-1</field>
+            <field name="description_sale">DOZER ARM FD240</field>
+            <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
+            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+        </record>
+
+        <record id="product_product_abe_10_product" model="product.product">
+            <field name="name">DOZER ARM FD220L FG</field>
+            <field name="categ_id" ref="product_category_abe_export_1" />
+            <field name="product_tag_ids"
+                eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="detailed_type">product</field>
+            <field name="weight">0.0</field>
+            <field name="uom_id" ref="uom.product_uom_unit" />
+            <field name="uom_po_id" ref="uom.product_uom_unit" />
+            <field name="default_code">W955Y-5201-1</field>
+            <field name="description_sale">DOZER ARM FD220L</field>
+            <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
+            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+        </record>
+
+        <record id="product_product_abe_11_product" model="product.product">
+            <field name="name">COMP FRONT BLADE FD190 FG</field>
+            <field name="categ_id" ref="product_category_abe_export_1" />
+            <field name="product_tag_ids"
+                eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="detailed_type">product</field>
+            <field name="weight">0.0</field>
+            <field name="uom_id" ref="uom.product_uom_unit" />
+            <field name="uom_po_id" ref="uom.product_uom_unit" />
+            <field name="default_code">W955V-5301-2</field>
+            <field name="description_sale">COMP FRONT BLADE FD190</field>
+            <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
+            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+        </record>
+
+        <record id="product_product_abe_12_product" model="product.product">
+            <field name="name">DOZER ARM FD210 FG</field>
+            <field name="categ_id" ref="product_category_abe_export_1" />
+            <field name="product_tag_ids"
+                eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="detailed_type">product</field>
+            <field name="weight">0.0</field>
+            <field name="uom_id" ref="uom.product_uom_unit" />
+            <field name="uom_po_id" ref="uom.product_uom_unit" />
+            <field name="default_code">W9561-5205-2</field>
+            <field name="description_sale">DOZER ARM FD210</field>
+            <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
+            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+        </record>
+
+        <record id="product_product_abe_13_product" model="product.product">
+            <field name="name">COMP FRON BLADE FD202HS</field>
+            <field name="categ_id" ref="product_category_abe_export_1" />
+            <field name="product_tag_ids"
+                eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="detailed_type">product</field>
+            <field name="weight">0.0</field>
+            <field name="uom_id" ref="uom.product_uom_unit" />
+            <field name="uom_po_id" ref="uom.product_uom_unit" />
+            <field name="default_code">W9550-5311-3</field>
+            <field name="description_sale">COMP FRON BLADE FD202HS</field>
+            <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
+            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+        </record>
+
+        <!-- #### Product Template #### -->
+        <!-- <record id="product_product_4_product" model="product.product">
+            <field name="name">Customizable Desk</field>
+            <field name="categ_id" ref="product_category_5"/>
+            <field name="standard_price">500.0</field>
+            <field name="list_price">750.0</field>
+            <field name="detailed_type">consu</field>
+            <field name="weight">0.01</field>
+            <field name="uom_id" ref="uom.product_uom_unit"/>
+            <field name="uom_po_id" ref="uom.product_uom_unit"/>
+            <field name="description_sale">160x80cm, with large legs.</field>
+        </record> -->
+    </data>
+</odoo>

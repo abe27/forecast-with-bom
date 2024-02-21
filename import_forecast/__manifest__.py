@@ -16,7 +16,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'abe_backend_theme', 'stock','web', 'mail','mrp'],
+    'depends': ['base', 'abe_backend_theme', 'stock','product','mrp','web', 'mail'],
 
     # always loaded
     'data': [
@@ -36,9 +36,9 @@
         'demo/partner.xml',
         'demo/part_category.xml',
         'demo/part_tag.xml',
-        # 'demo/part_list.xml',
+        'demo/part_template.xml',
+        'demo/part_variants.xml',
         'demo/mrp.xml',
-        'demo/part_finish_good.xml'
     ],
     # 'assets': {
     #     'web.assets_backend': {
