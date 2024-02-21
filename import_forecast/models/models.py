@@ -241,6 +241,7 @@ class ForecastBom(models.Model):
     name = fields.Char(size=255, string="BOM Name", tracking=True)
     forecast_id = fields.Many2one('import_forecast.forecast', string='Forecast No', required=True, tracking=True, ondelete='cascade', readonly=True)
     forecast_id = fields.Many2one('import_forecast.forecast_detail', string='Forecast Detail ID', required=True, tracking=True, ondelete='cascade', readonly=True)
-    part_id = fields.Many2one('mrp.bom', string="BOM ID", tracking=True, readonly=True)
+    bom_id = fields.Many2one('mrp.bom', string="BOM ID", required=True, tracking=True, ondelete='cascade', readonly=True)
+    bom_line_id = fields.Many2one('mrp.bom.line', string="BOM Line ID", required=True, tracking=True, ondelete='cascade', readonly=True)
     remain_qty = fields.Float(string="Qty", tracking=True, readonly=True)
 
