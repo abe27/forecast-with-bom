@@ -128,7 +128,7 @@
             <field name="default_code">TC882-8100D</field>
             <field name="description_sale">Frame Cab Comp</field>
             <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
-            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+            <!-- <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/> -->
         </record>
 
         <record id="product_product_abe_6_product" model="product.product">
@@ -145,7 +145,7 @@
             <field name="default_code">W9564-5361-1</field>
             <field name="description_sale">COMP FRONT BLADE FD240</field>
             <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
-            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+            <!-- <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/> -->
         </record>
 
         <record id="product_product_abe_7_product" model="product.product">
@@ -162,7 +162,7 @@
             <field name="default_code">W955K-5301-2</field>
             <field name="description_sale">COMP FRONT BLADE FD220J</field>
             <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
-            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+            <!-- <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/> -->
         </record>
 
         <record id="product_product_abe_8_product" model="product.product">
@@ -179,7 +179,7 @@
             <field name="default_code">W955Y-5301-2</field>
             <field name="description_sale">COMP FRONT BLADE FD220L</field>
             <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
-            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+            <!-- <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/> -->
         </record>
 
         <record id="product_product_abe_9_product" model="product.product">
@@ -196,7 +196,7 @@
             <field name="default_code">W9564-5266-1</field>
             <field name="description_sale">DOZER ARM FD240</field>
             <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
-            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+            <!-- <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/> -->
         </record>
 
         <record id="product_product_abe_10_product" model="product.product">
@@ -213,7 +213,7 @@
             <field name="default_code">W955Y-5201-1</field>
             <field name="description_sale">DOZER ARM FD220L</field>
             <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
-            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+            <!-- <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/> -->
         </record>
 
         <record id="product_product_abe_11_product" model="product.product">
@@ -230,7 +230,7 @@
             <field name="default_code">W955V-5301-2</field>
             <field name="description_sale">COMP FRONT BLADE FD190</field>
             <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
-            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+            <!-- <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/> -->
         </record>
 
         <record id="product_product_abe_12_product" model="product.product">
@@ -247,7 +247,7 @@
             <field name="default_code">W9561-5205-2</field>
             <field name="description_sale">DOZER ARM FD210</field>
             <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
-            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+            <!-- <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/> -->
         </record>
 
         <record id="product_product_abe_13_product" model="product.product">
@@ -264,7 +264,7 @@
             <field name="default_code">W9550-5311-3</field>
             <field name="description_sale">COMP FRON BLADE FD202HS</field>
             <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
-            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+            <!-- <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/> -->
         </record>
 
         <!-- #### Product Template #### -->

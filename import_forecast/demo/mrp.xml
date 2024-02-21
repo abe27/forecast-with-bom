@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
+        <!-- Resource: mrp.bom -->
+        <record id="product_product_abe_5_product_template" model="product.template">
+            <field name="name">TEST BOM FG 001</field>
+            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+        </record>
+
         <!-- ### Bom Product FG -->
         <record id="mrp_bom_fg_product_abe_5" model="mrp.bom">
             <field name="product_tmpl_id" ref="product_product_abe_5_product_template"/>
@@ -46,8 +52,13 @@
         </record>
 
         <!-- ### Bom Line 4 -->
+        <record id="mrp_bom_com_product_abe_5_line_4_template" model="product.template">
+            <field name="name">TEST BOM COM IVSSH 0.5F GY</field>
+            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+        </record>
+
         <record id="mrp_bom_com_product_abe_5_line_4" model="mrp.bom">
-            <field name="product_tmpl_id" ref="product_product_abe_3_product_template"/>
+            <field name="product_tmpl_id" ref="mrp_bom_com_product_abe_5_line_4_template"/>
             <field name="product_id" ref="product_product_abe_3_product"/>
             <field name="product_uom_id" ref="uom.product_uom_unit"/>
             <field name="sequence">3</field>

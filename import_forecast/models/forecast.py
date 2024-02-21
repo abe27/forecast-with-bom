@@ -1,25 +1,8 @@
-# -*- coding: utf-8 -*-
-
 import base64
 import csv
 from datetime import datetime
 import io
 from odoo import models, fields, api
-
-
-# class forecast(models.Model):
-#     _name = 'forecast.forecast'
-#     _description = 'forecast.forecast'
-
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
 
 class Forecast(models.Model):
     _name = "import_forecast.forecast"
@@ -28,7 +11,7 @@ class Forecast(models.Model):
 
     name = fields.Char(size=50, string="Customer Name",tracking=True, readonly=True)
     partner_id = fields.Many2one('res.partner', string="Customer", required=True, tracking=True)
-    on_month = fields.Date(string="On Month", required=True,tracking=True, default=lambda self: fields.datetime.now())
+    on_month = fields.Date(string="Forecast On Month", required=True,tracking=True, default=lambda self: fields.datetime.now())
     revise_level = fields.Selection([('0', 'Revise 0'), ('1', 'Revise 1'), ('2', 'Revise 2'), ('3', 'Revise 3')], string="Revise Level", tracking=True, required=True)
     file_forecast_name = fields.Char(size=50, string="File Name", tracking=True)
     file_forecast = fields.Binary(string="Import Forecast", tracking=True)
@@ -86,6 +69,9 @@ class Forecast(models.Model):
     @api.model_create_multi
     def create(self, obj_list):
         for obj in obj_list:
+            onForecast = datetime.strptime(obj['on_month'], '%Y-%m-%d')
+            onMonth = int(onForecast.strftime('%m'))
+            onYear = int(onForecast.strftime('%Y'))
             ### Generate Forecast No. ###
             dte = datetime.now()
             runData = self.env["import_forecast.forecast"].search([("create_date",">=", fields.date.today())])
@@ -105,8 +91,9 @@ class Forecast(models.Model):
             qty = 0
             seq = 1
             # print(docs)
-            prod = self.env["product.product"].search([("product_tmpl_id", "in", docs)])
+            prod = self.env["product.product"].search([("product_tmpl_id", "in", docs),('detailed_type', '=', 'product')])
             for id in prod:
+                ### create forecast detail
                 self.env["import_forecast.forecast_detail"].create({
                     "seq": seq,
                     "forecast_id": req.id,
@@ -116,6 +103,9 @@ class Forecast(models.Model):
                     "month_2": 0,
                     "month_3": 0,
                 })
+
+                ### create forecast month
+                ### create forecast bom
                 seq += 1
             
             #### ITEMS,QTY and set Status #####
@@ -187,61 +177,3 @@ class Forecast(models.Model):
             ### Update forecast Status ###
             forecast = self.env["import_forecast.forecast"].search([("id", "=", id)])
             forecast.write({"is_status": "2"})
-
-
-class ForecastDetail(models.Model):
-    _name = "import_forecast.forecast_detail"
-    _description = "รายละเอียด Forecast Detail"
-    _inherit = ['mail.thread', 'mail.activity.mixin']
-
-    seq = fields.Integer(string="Seq", default="1")
-    name = fields.Char(size=50, string="Forecast No.",compute="_value_forecast_name", tracking=True, readonly=True)
-    forecast_id = fields.Many2one('import_forecast.forecast', string='Forecast No', required=True, tracking=True, ondelete='cascade', readonly=True)
-    part_id = fields.Many2one('product.product', string="Part No", tracking=True, readonly=True)
-    part_name = fields.Char(size=255, string="Part Name",compute="_value_part_name", tracking=True, readonly=True)
-    qty = fields.Float(string="N", required=True, tracking=True)
-    month_1 = fields.Float(string="N+1", tracking=True, default="0")
-    month_2 = fields.Float(string="N+2", tracking=True, default="0")
-    month_3 = fields.Float(string="N+3", tracking=True, default="0")
-    is_match = fields.Selection([("0", "Not Match"), ("1", "Matched")],string="Status", tracking=True, default="0")
-
-    @api.depends('forecast_id')
-    def _value_forecast_name(self):
-        for r in self:
-            r.name = r.forecast_id.name
-
-    @api.depends('part_id')
-    def _value_part_name(self):
-        for r in self:
-            r.part_name = r.part_id.name
-            
-    @api.model
-    def unlink(self):
-        # for r in self:
-        #     print(f"delete from forecast: {r.id}")
-            
-        return super().unlink()
-    
-class ForecastMonth(models.Model):
-    _name = "import_forecast.forecast_month"
-    _description = "รายละเอียด Forecast Month"
-    _inherit = ['mail.thread','mail.activity.mixin']
-
-    name = fields.Char(size=50, string="OnMonth", tracking=True)
-    forecast_id = fields.Many2one('import_forecast.forecast', string='Forecast No', required=True, tracking=True, ondelete='cascade', readonly=True)
-    part_id = fields.Many2one('product.product', string="Part No", tracking=True, readonly=True)
-    qty = fields.Float(string="Qty", tracking=True, readonly=True)
-    remain_date = fields.Datetime(string="Remain Date", tracking=True)
-
-class ForecastBom(models.Model):
-    _name = "import_forecast.forecast_bom"
-    _description = "รายละเอียด Forecast Bom"
-    _inherit = ['mail.thread','mail.activity.mixin']
-
-    name = fields.Char(size=255, string="BOM Name", tracking=True)
-    forecast_id = fields.Many2one('import_forecast.forecast', string='Forecast No', required=True, tracking=True, ondelete='cascade', readonly=True)
-    forecast_id = fields.Many2one('import_forecast.forecast_detail', string='Forecast Detail ID', required=True, tracking=True, ondelete='cascade', readonly=True)
-    bom_id = fields.Many2one('mrp.bom', string="BOM ID", required=True, tracking=True, ondelete='cascade', readonly=True)
-    bom_line_id = fields.Many2one('mrp.bom.line', string="BOM Line ID", required=True, tracking=True, ondelete='cascade', readonly=True)
-    remain_qty = fields.Float(string="Qty", tracking=True, readonly=True)
-

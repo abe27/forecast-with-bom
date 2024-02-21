@@ -36,8 +36,8 @@
         'demo/partner.xml',
         'demo/part_category.xml',
         'demo/part_tag.xml',
-        'demo/part_template.xml',
         'demo/part_variants.xml',
+        # 'demo/part_template.xml',
         'demo/mrp.xml',
     ],
     # 'assets': {
