@@ -31,13 +31,9 @@ class Forecast(models.Model):
     img_partner = fields.Image(
         compute="_value_partner_image", store=True, readonly=True
     )
-    line_ids = fields.One2many(
-        "import_forecast.forecast_detail",
-        "forecast_id",
-        string="Forecast Detail",
-        required=True,
-        tracking=True,
-    )
+    line_ids = fields.One2many("import_forecast.forecast_detail","forecast_id",string="Forecast Detail",required=True,tracking=True,)
+    month_line_ids = fields.One2many("import_forecast.forecast_month","forecast_id",string="Summary Month",required=True,tracking=True,)
+    bom_line_ids = fields.One2many("import_forecast.forecast_bom","forecast_id",string="Bom Line",required=True,tracking=True,)
     item = fields.Integer(string="Item", tracking=True, readonly=True, default="0")
     qty = fields.Float(string="Qty", tracking=True, readonly=True, default="0")
     is_status = fields.Selection(
@@ -147,44 +143,65 @@ class Forecast(models.Model):
                 ### create forecast month
 
                 ### create forecast bom
-                checkBom = self.env["mrp.bom"].search([("product_id", "=", id.id)])
-                if checkBom:
+                bomLevel1 = self.env["mrp.bom"].search([("product_id", "=", id.id)])
+                if bomLevel1:
                     ### get bom line ID
                     lineID = 0
-                    bomLine = self.env["mrp.bom.line"].search(
-                        [("bom_id", "=", checkBom.id)]
-                    )
-                    if bomLine:
-                        for b in bomLine:
+                    bomLine1 = self.env["mrp.bom.line"].search([("bom_id", "=", bomLevel1.id)])
+                    if bomLine1:
+                        for b1 in bomLine1:
                             lineID += 1
-                            print(f"{lineID}. BOM Line ID: {b.id} Qty: {b.product_qty}")
-                            bomLineLevel2 = self.env["mrp.bom"].search(
-                                [("product_id", "=", b.product_id.id)]
-                            )
-                            if bomLineLevel2:
-                                for bL in bomLineLevel2:
-                                    lineID += 1
-                                    print(f"{lineID}. BOM Line Level2 ID: {bL.id} Qty: {bL.product_qty}")
+                            # print(f"{lineID}. ID Lv1: {bomLevel1.id} BOM Line ID: {b1.id} Product: {b1.product_id.name} Qty: {b1.product_qty}")
+                            bomLevel2 = self.env["mrp.bom"].search([("product_id", "=", b1.product_id.id)])
+                            if bomLevel2:
+                                bomLine2 = self.env["mrp.bom.line"].search([("bom_id", "=", bomLevel2.id)])
+                                if bomLine2:
+                                    for b2 in bomLine2:
+                                        lineID += 1
+                                        # print(f"{lineID}. ID Lv1: {bomLevel2.id} BOM Line ID: {b2.id} Product: {b2.product_id.name} Qty: {b2.product_qty}")
+                                        forecastBom = self.env["import_forecast.forecast_bom"].search(
+                                            [
+                                                ("forecast_id", "=", req.id),
+                                                ("forecast_detail_id", "=", prodDetail.id),
+                                                ("bom_id", "=", bomLevel2.id),
+                                                ("bom_line_id", "=", b2.id),
+                                            ]
+                                        )
+
+                                        # print(f"Forecast BOM: {len(forecastBom)}")
+                                        if len(forecastBom) == 0:
+                                            self.env["import_forecast.forecast_bom"].create(
+                                                {
+                                                    "seq": lineID,
+                                                    "forecast_id": req.id,
+                                                    "forecast_detail_id": prodDetail.id,
+                                                    "bom_id": bomLevel2.id,
+                                                    "bom_line_id": b2.id,
+                                                    "remain_qty": b2.product_qty
+                                                }
+                                            )
                             else:
                                 forecastBom = self.env["import_forecast.forecast_bom"].search(
                                     [
                                         ("forecast_id", "=", req.id),
                                         ("forecast_detail_id", "=", prodDetail.id),
-                                        ("bom_id", "=", checkBom.id),
-                                        ("bom_line_id", "=", b.id),
+                                        ("bom_id", "=", bomLevel1.id),
+                                        ("bom_line_id", "=", b1.id),
                                     ]
                                 )
-                                print(f"Forecast BOM: {len(forecastBom)}")
+                                # print(f"Forecast BOM: {len(forecastBom)}")
                                 if len(forecastBom) == 0:
                                     self.env["import_forecast.forecast_bom"].create(
                                         {
+                                            "seq": lineID,
                                             "forecast_id": req.id,
                                             "forecast_detail_id": prodDetail.id,
-                                            "bom_id": checkBom.id,
-                                            "bom_line_id": b.id,
-                                            "remain_qty": b.product_qty
+                                            "bom_id": bomLevel1.id,
+                                            "bom_line_id": b1.id,
+                                            "remain_qty": b1.product_qty
                                         }
                                     )
+                    
                 seq += 1
 
             #### ITEMS,QTY and set Status #####

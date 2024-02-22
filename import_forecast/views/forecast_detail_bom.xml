@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+    <!-- <record id="forecast_detail_bom_form" model="import_forecast.forecast_bom">
+        <field name="field_name">field_value</field>
+    </record> -->
+    </data>
+</odoo>

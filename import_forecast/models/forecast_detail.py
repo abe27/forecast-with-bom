@@ -1,7 +1,3 @@
-import base64
-import csv
-from datetime import datetime
-import io
 from odoo import models, fields, api
 
 class ForecastDetail(models.Model):
