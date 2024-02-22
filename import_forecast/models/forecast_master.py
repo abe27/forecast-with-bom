@@ -11,7 +11,7 @@ class ForecastMonth(models.Model):
     forecast_id = fields.Many2one('import_forecast.forecast', string='Forecast No', required=True, tracking=True, ondelete='cascade', readonly=True)
     part_id = fields.Many2one('product.product', string="Part No", tracking=True, readonly=True)
     qty = fields.Float(string="Qty", tracking=True, readonly=True)
-    remain_date = fields.Datetime(string="Remain Date", tracking=True)
+    remain_date = fields.Datetime(string="Remain Date", tracking=True, default=fields.datetime.now())
 
 class ForecastBom(models.Model):
     _name = "import_forecast.forecast_bom"
