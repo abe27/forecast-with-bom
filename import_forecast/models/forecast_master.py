@@ -9,6 +9,7 @@ class ForecastMonth(models.Model):
     seq = fields.Integer(string="seq", tracking=True, readonly=True)
     name = fields.Char(size=50, string="OnMonth", tracking=True)
     forecast_id = fields.Many2one('import_forecast.forecast', string='Forecast No', required=True, tracking=True, ondelete='cascade', readonly=True)
+    forecast_detail_id = fields.Many2one('import_forecast.forecast_detail', string='Forecast Detail ID', required=True, tracking=True, ondelete='cascade', readonly=True)
     part_id = fields.Many2one('product.product', string="Part No", tracking=True, readonly=True)
     qty = fields.Float(string="Qty", tracking=True, readonly=True)
     remain_date = fields.Datetime(string="Remain Date", tracking=True, default=fields.datetime.now())

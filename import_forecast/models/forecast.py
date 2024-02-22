@@ -147,18 +147,19 @@ class Forecast(models.Model):
                         onYear += 1
 
                     remainQty = 0
-                    onForecastMonth = f"{onMonth:'02d'}{onYear}"
-                    forecastMonth = self.env["import_forecast.forecast_month"].search([("forecast_id","=",req.id),("part_id","=",id.id)])
+                    onForecastMonth = f"{onMonth:02d}{onYear}"
+                    forecastMonth = self.env["import_forecast.forecast_month"].search([("name","=", onForecastMonth),("forecast_id","=",req.id),("part_id","=",id.id)])
                     if len(forecastMonth) == 0:
                         self.env["import_forecast.forecast_month"].create({
                             "seq": (r + 1),
                             "name": onForecastMonth,
                             "forecast_id": req.id,
+                            "forecast_detail_id": prodDetail.id,
                             "part_id": id.id,
                             "qty": remainQty,
                         })
 
-                    print(f"ID: {r} Month: {onMonth} Year: {onYear}")
+                    # print(f"ID: {r} Month: {onMonth} Year: {onYear}")
                     onMonth += 1
                 ### create forecast bom
                 bomLevel1 = self.env["mrp.bom"].search([("product_id", "=", id.id)])
