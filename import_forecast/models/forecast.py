@@ -303,5 +303,6 @@ class Forecast(models.Model):
                 seq += 1
 
             ### Update forecast Status ###
-            forecast = self.env["import_forecast.forecast"].search([("id", "=", id)])
+            # forecast = self.env["import_forecast.forecast"].search([("id", "=", id)])
             # forecast.write({"is_status": "2"})
+    

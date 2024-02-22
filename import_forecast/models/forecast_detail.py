@@ -28,7 +28,15 @@ class ForecastDetail(models.Model):
             
     @api.model
     def unlink(self):
-        # for r in self:
-        #     print(f"delete from forecast: {r.id}")
-            
-        return super().unlink()
+        forecast_id = None
+        for r in self:
+            # print(f"delete from forecast: {r.forecast_id}")
+            forecast_id = r.forecast_id.id
+
+        ### Delete forecast Detail
+        super().unlink()
+
+        ### Update forecast Status to draff
+        forecast = self.env["import_forecast.forecast"].search([("id", "=", forecast_id)])
+        forecast.write({"is_status": "0"})    
+        return True
