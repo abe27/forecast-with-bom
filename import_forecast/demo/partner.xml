@@ -299,8 +299,6 @@
             <field name="parent_id" ref="res_partner_taweechai_0" />
             <field name="street">197/121 Moo 7 Smilehouse3</field>
             <field name="city">Wangyen, Plangyao</field>
-            <!-- <field name="state_id" ref='state_th_006'/>
-        <field name="country_id" ref="base.th"/> -->
             <field name="zip">24190</field>
             <field name="phone">(66)-109-0602</field>
             <field name="email">taweechai.yuenyang@outlook.com</field>
