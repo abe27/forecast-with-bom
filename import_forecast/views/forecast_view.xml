@@ -123,7 +123,7 @@
                         </group>
                         <notebook>
                             <page name="Forecast Detail">
-                                <field name="line_ids" widget="one2many_list" editable="top" readonly="is_status != '0'">
+                                <field name="line_ids" widget="one2many_list" editable="top">
                                     <tree>
                                         <field name="seq" string="No." />
                                         <field name="part_id" string="Part Code"/>
