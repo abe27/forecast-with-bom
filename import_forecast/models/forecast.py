@@ -176,8 +176,7 @@ class Forecast(models.Model):
                                                     "forecast_id": req.id,
                                                     "forecast_detail_id": prodDetail.id,
                                                     "bom_id": bomLevel2.id,
-                                                    "bom_line_id": b2.id,
-                                                    "remain_qty": b2.product_qty
+                                                    "bom_line_id": b2.id
                                                 }
                                             )
                             else:
@@ -197,8 +196,7 @@ class Forecast(models.Model):
                                             "forecast_id": req.id,
                                             "forecast_detail_id": prodDetail.id,
                                             "bom_id": bomLevel1.id,
-                                            "bom_line_id": b1.id,
-                                            "remain_qty": b1.product_qty
+                                            "bom_line_id": b1.id
                                         }
                                     )
                     

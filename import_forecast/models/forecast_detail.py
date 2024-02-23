@@ -42,29 +42,40 @@ class ForecastDetail(models.Model):
         return True
     
     def write(self, obj):
-        super().write(obj)
-        try:
-            ### Get Last Update
-            forecastDetail = self.env["import_forecast.forecast_detail"].search([("id", "=", self.id)])
-            print(forecastDetail.qty)
-            for i in forecastDetail:
-                print(i)
-                #### Month N Update Forecast Month
-                forecastMonth = self.env["import_forecast.forecast_month"].search([("forecast_id","=", self.forecast_id.id)])
-                seq = 0
-                for r in forecastMonth:
-                    print(f"SEQ: {seq} ID: {r.id} Month: {r.name} Qty: {i.qty}")
-                    if seq == 0:
-                        r.write({"qty": i.qty})
-                    elif seq == 1:
-                        r.write({"qty": i.month_1})
-                    elif seq == 2:
-                        r.write({"qty": i.month_2})
-                    elif seq == 3:
-                        r.write({"qty": i.month_3})
-                    seq += 1
+        res = super().write(obj)
+        ### Get Last Update
+        qty = 0
+        month_1 = 0
+        month_2 = 0
+        month_3 = 0
+        seq = 0
+        forecastDetail = self.env["import_forecast.forecast_detail"].search([("forecast_id", "=", self.forecast_id.id)])
+        for i in forecastDetail:
+            qty += i.qty
+            month_1 += i.month_1
+            month_2 += i.month_2
+            month_3 += i.month_3
+            seq += 1
 
-        except Exception as e:
-            pass
+        print(f"SEQ: {seq}  Qty: {qty} N1: {month_1} N2: {month_2} N3: {month_3}") 
+        #### Month N Update Forecast Month
+        forecastMonth = self.env["import_forecast.forecast_month"].search([("forecast_id","=", self.forecast_id.id)])
+        seq = 0
+        for r in forecastMonth:
+            print(f"SEQ: {seq} ID: {r.id} Month: {r.name} Qty: {qty} N1: {month_1} N2: {month_2} N3: {month_3}")
+            if seq == 0:
+                if qty > 0:
+                    r.write({"qty": qty})
 
-        return True
+            elif seq == 1:
+                r.write({"qty": month_1})
+
+            elif seq == 2:
+                r.write({"qty": month_2})
+
+            elif seq == 3:
+                r.write({"qty": month_3})
+
+            seq += 1
+
+        return res
