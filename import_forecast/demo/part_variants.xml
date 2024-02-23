@@ -130,5 +130,56 @@
             <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
             <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
         </record>
+
+        <!-- ### Part FG -->
+        <record id="product_product_abe_6_product" model="product.product">
+            <field name="name">TEST FG 002</field>
+            <field name="categ_id" ref="product_category_abe_export_1" />
+            <field name="product_tag_ids"
+                eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="detailed_type">product</field>
+            <field name="weight">0.0</field>
+            <field name="uom_id" ref="uom.product_uom_unit" />
+            <field name="uom_po_id" ref="uom.product_uom_unit" />
+            <field name="default_code">TC882-8100AA</field>
+            <field name="description_sale">Frame Cab Comp A</field>
+            <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
+            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+        </record>
+
+        <!-- #### Part Component #### -->
+        <record id="product_product_abe_7_product" model="product.product">
+            <field name="name">COM A006</field>
+            <field name="categ_id" ref="product_category_abe_export_1" />
+            <field name="product_tag_ids"
+                eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="detailed_type">consu</field>
+            <field name="weight">0.0</field>
+            <field name="uom_id" ref="uom.product_uom_unit" />
+            <field name="uom_po_id" ref="uom.product_uom_unit" />
+            <field name="default_code">1801W0039566</field>
+            <field name="description_sale">A006</field>
+            <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
+        </record>
+
+        <record id="product_product_abe_8_product" model="product.product">
+            <field name="name">COM A006</field>
+            <field name="categ_id" ref="product_category_abe_export_1" />
+            <field name="product_tag_ids"
+                eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
+            <field name="standard_price">0.0</field>
+            <field name="list_price">0.0</field>
+            <field name="detailed_type">consu</field>
+            <field name="weight">0.0</field>
+            <field name="uom_id" ref="uom.product_uom_unit" />
+            <field name="uom_po_id" ref="uom.product_uom_unit" />
+            <field name="default_code">1801W003XC5U</field>
+            <field name="description_sale">A006</field>
+            <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
+        </record>
     </data>
 </odoo>

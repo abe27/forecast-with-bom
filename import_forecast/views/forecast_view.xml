@@ -142,7 +142,6 @@
                                     <tree>
                                         <field name="seq" string="No." />
                                         <field name="name" string="Forecast Month"/>
-                                        <field name="part_id" string="Part Code"/>
                                         <field name="qty" string="Qty" />
                                         <field name="remain_date" string="Remain Date"/>
                                     </tree>

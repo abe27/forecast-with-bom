@@ -47,7 +47,7 @@
             <field name="email">surasit.j@vcsgroup.co.th</field>
             <field name="website">https://vcsgroupthai.com</field>
             <field name="image_1920" type="base64"
-                file="import_forecast/static/description/Surasit.jpg" />
+                file="import_forecast/static/description/vcs.png" />
         </record>
 
         <record id="work_contact_surasit_user_0" model="res.partner">

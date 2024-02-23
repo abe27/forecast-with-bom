@@ -7,16 +7,11 @@
             <field name="arch" type="xml">
                 <form>
                     <group>
-                        <group>
-                            <field name="name" />
-                        </group>
-                        <group>
-                            <field name="forecast_id" />
-                        </group>
+                        <field name="name" />
                     </group>
                     <group>
                         <group>
-                            <field name="part_id" />
+                            <field name="forecast_id" />
                         </group>
                         <group>
                             <field name="qty" />

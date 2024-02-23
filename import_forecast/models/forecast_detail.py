@@ -40,3 +40,31 @@ class ForecastDetail(models.Model):
         forecast = self.env["import_forecast.forecast"].search([("id", "=", forecast_id)])
         forecast.write({"is_status": "0"})    
         return True
+    
+    def write(self, obj):
+        super().write(obj)
+        try:
+            ### Get Last Update
+            forecastDetail = self.env["import_forecast.forecast_detail"].search([("id", "=", self.id)])
+            print(forecastDetail.qty)
+            for i in forecastDetail:
+                print(i)
+                #### Month N Update Forecast Month
+                forecastMonth = self.env["import_forecast.forecast_month"].search([("forecast_id","=", self.forecast_id.id)])
+                seq = 0
+                for r in forecastMonth:
+                    print(f"SEQ: {seq} ID: {r.id} Month: {r.name} Qty: {i.qty}")
+                    if seq == 0:
+                        r.write({"qty": i.qty})
+                    elif seq == 1:
+                        r.write({"qty": i.month_1})
+                    elif seq == 2:
+                        r.write({"qty": i.month_2})
+                    elif seq == 3:
+                        r.write({"qty": i.month_3})
+                    seq += 1
+
+        except Exception as e:
+            pass
+
+        return True
