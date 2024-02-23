@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="forecast_month_form" model="ir.ui.view">
+            <field name="name">forecast_month_form</field>
+            <field name="model">import_forecast.forecast_month</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <field name="forecast_id" />
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="part_id" />
+                        </group>
+                        <group>
+                            <field name="qty" />
+                        </group>
+                    </group>
+                    <group>
+                        <field name="remain_date" />
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

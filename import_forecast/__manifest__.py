@@ -27,6 +27,7 @@
         'views/forecast_detail_view.xml',
         'views/forecast_detail_bom.xml',
         'views/product_tag.xml',
+        'views/forecast_month.xml',
         # 'demo/partner.xml',
         # 'demo/part_category.xml',
         # 'demo/part_tag.xml',

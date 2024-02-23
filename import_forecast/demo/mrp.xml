@@ -53,7 +53,7 @@
 
         <!-- ### Bom Line 4 -->
         <record id="mrp_bom_com_product_abe_5_line_4_template" model="product.template">
-            <field name="name">TEST BOM COM IVSSH 0.5F GY</field>
+            <field name="name">TEST BOM COM A005</field>
             <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
         </record>
 

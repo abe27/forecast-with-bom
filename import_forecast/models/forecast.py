@@ -147,7 +147,7 @@ class Forecast(models.Model):
                         onYear += 1
 
                     remainQty = 0
-                    onForecastMonth = f"{onMonth:02d}{onYear}"
+                    onForecastMonth = f"{onMonth:02d}/{onYear}"
                     forecastMonth = self.env["import_forecast.forecast_month"].search([("name","=", onForecastMonth),("forecast_id","=",req.id),("part_id","=",id.id)])
                     if len(forecastMonth) == 0:
                         self.env["import_forecast.forecast_month"].create({
