@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="forecast_bom_form" model="ir.ui.view">
+            <field name="name">forecast_bom_form</field>
+            <field name="model">import_forecast.forecast_bom</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="name" />
+                        </group>
+                        <group>
+                            <field name="forecast_id" />
+                        </group>
+                    </group>
+                    <!-- <group>
+                        <field name="bom_id" />
+                    </group> -->
+                    <group>
+                        <group>
+                            <field name="bom_line_id" />
+                        </group>
+                        <group>
+                            <field name="remain_qty" />
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
