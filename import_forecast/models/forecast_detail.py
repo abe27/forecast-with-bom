@@ -62,10 +62,8 @@ class ForecastDetail(models.Model):
         forecastMonth = self.env["import_forecast.forecast_month"].search([("forecast_id","=", self.forecast_id.id)])
         seq = 0
         for r in forecastMonth:
-            print(f"SEQ: {seq} ID: {r.id} Month: {r.name} Qty: {qty} N1: {month_1} N2: {month_2} N3: {month_3}")
             if seq == 0:
-                if qty > 0:
-                    r.write({"qty": qty})
+                r.write({"qty": qty})
 
             elif seq == 1:
                 r.write({"qty": month_1})
@@ -77,5 +75,10 @@ class ForecastDetail(models.Model):
                 r.write({"qty": month_3})
 
             seq += 1
+
+        ### Summary Bom Line
+        bom = self.env["import_forecast.forecast_bom"].search([("forecast_detail_id","=",self.id)])
+        for r in bom:
+            print(r)
 
         return res
