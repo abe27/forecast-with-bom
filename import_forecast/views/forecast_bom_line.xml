@@ -26,7 +26,7 @@
                         </group>
                     </group>
                     <group>
-                        <field name="remain_qty" />
+                        <field name="require_qty" string="Sum. Qty" />
                     </group>
                 </form>
             </field>

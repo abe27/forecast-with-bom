@@ -155,7 +155,7 @@
                                         <!-- <field name="bom_id" string="BOM"/> -->
                                         <field name="bom_line_id" string="BOM Line"/>
                                         <field name="bom_qty" string="BOM Qty"/>
-                                        <field name="remain_qty" string="Remain Qty" />
+                                        <field name="require_qty" string="Remain Qty" />
                                     </tree>
                                 </field>
                             </page>
