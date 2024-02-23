@@ -3,7 +3,7 @@
     <data noupdate="1">
         <!-- ### Components -->
         <record id="product_product_abe_0_product" model="product.product">
-            <field name="name">COM AVSS 1.25F V</field>
+            <field name="name">COM A001</field>
             <field name="categ_id" ref="product_category_abe_domestic_1" />
             <field name="product_tag_ids"
                 eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
@@ -14,11 +14,11 @@
             <field name="uom_id" ref="uom.product_uom_unit" />
             <field name="uom_po_id" ref="uom.product_uom_unit" />
             <field name="default_code">18007704192</field>
-            <field name="description_sale">AVSS 1.25F V</field>
+            <field name="description_sale">A001</field>
         </record>
 
         <record id="product_product_abe_1_product" model="product.product">
-            <field name="name">COM AVSSCS-S 0.5FX2 DGY/G</field>
+            <field name="name">COM A002</field>
             <field name="categ_id" ref="product_category_abe_domestic_1" />
             <field name="product_tag_ids"
                 eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
@@ -29,12 +29,12 @@
             <field name="uom_id" ref="uom.product_uom_unit" />
             <field name="uom_po_id" ref="uom.product_uom_unit" />
             <field name="default_code">181E50012ZZ</field>
-            <field name="description_sale">AVSSCS-S 0.5FX2 DGY/G</field>
+            <field name="description_sale">A002</field>
             <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
         </record>
 
         <record id="product_product_abe_2_product" model="product.product">
-            <field name="name">COM CAVSAS-S 0.3X1 GY/R</field>
+            <field name="name">COM A003</field>
             <field name="categ_id" ref="product_category_abe_domestic_1" />
             <field name="product_tag_ids"
                 eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
@@ -45,12 +45,12 @@
             <field name="uom_id" ref="uom.product_uom_unit" />
             <field name="uom_po_id" ref="uom.product_uom_unit" />
             <field name="default_code">181E48010ZZ</field>
-            <field name="description_sale">CAVSAS-S 0.3X1 GY/R</field>
+            <field name="description_sale">A003</field>
             <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
         </record>
 
         <record id="product_product_abe_3_product" model="product.product">
-            <field name="name">COM IVSSH 0.5F GY</field>
+            <field name="name">COM A004</field>
             <field name="categ_id" ref="product_category_abe_export_1" />
             <field name="product_tag_ids"
                 eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
@@ -61,12 +61,12 @@
             <field name="uom_id" ref="uom.product_uom_unit" />
             <field name="uom_po_id" ref="uom.product_uom_unit" />
             <field name="default_code">1801W003941</field>
-            <field name="description_sale">IVSSH 0.5F GY</field>
+            <field name="description_sale">A004</field>
             <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
         </record>
 
         <record id="product_product_abe_4_product" model="product.product">
-            <field name="name">COM IVSSH 0.5F BE</field>
+            <field name="name">COM A005</field>
             <field name="categ_id" ref="product_category_abe_export_1" />
             <field name="product_tag_ids"
                 eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
@@ -77,12 +77,12 @@
             <field name="uom_id" ref="uom.product_uom_unit" />
             <field name="uom_po_id" ref="uom.product_uom_unit" />
             <field name="default_code">1801W00395U</field>
-            <field name="description_sale">IVSSH 0.5F BE</field>
+            <field name="description_sale">A005</field>
             <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
         </record>
 
         <record id="product_product_abe_4_0_product" model="product.product">
-            <field name="name">COM IVSSH 0.5F BE 001</field>
+            <field name="name">COM A005 001</field>
             <field name="categ_id" ref="product_category_abe_export_1" />
             <field name="product_tag_ids"
                 eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
@@ -93,12 +93,12 @@
             <field name="uom_id" ref="uom.product_uom_unit" />
             <field name="uom_po_id" ref="uom.product_uom_unit" />
             <field name="default_code">1801W00395UX01</field>
-            <field name="description_sale">IVSSH 0.5F BE 001</field>
+            <field name="description_sale">A005 001</field>
             <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
         </record>
 
         <record id="product_product_abe_4_1_product" model="product.product">
-            <field name="name">COM IVSSH 0.5F BE 002</field>
+            <field name="name">COM A005 002</field>
             <field name="categ_id" ref="product_category_abe_export_1" />
             <field name="product_tag_ids"
                 eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
@@ -109,7 +109,7 @@
             <field name="uom_id" ref="uom.product_uom_unit" />
             <field name="uom_po_id" ref="uom.product_uom_unit" />
             <field name="default_code">1801W00395UX02</field>
-            <field name="description_sale">IVSSH 0.5F BE 002</field>
+            <field name="description_sale">A005 002</field>
             <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
         </record>
 
