@@ -207,7 +207,6 @@ class Forecast(models.Model):
                                             "bom_qty": b1.product_qty
                                         }
                                     )
-                    
                 seq += 1
 
             ### create forecast month
