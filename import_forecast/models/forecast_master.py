@@ -25,7 +25,7 @@ class ForecastBom(models.Model):
     forecast_detail_id = fields.Many2one('import_forecast.forecast_detail', string='Forecast Detail ID', required=True, tracking=True, ondelete='cascade', readonly=True)
     bom_id = fields.Many2one('mrp.bom', string="BOM ID", required=True, tracking=True, ondelete='cascade', readonly=True)
     bom_line_id = fields.Many2one('mrp.bom.line', string="BOM Line ID", required=True, tracking=True, ondelete='cascade', readonly=True)
-    bom_qty = fields.Float(string="Bom Qty", compute="_value_product_name", tracking=True, readonly=True)
+    bom_qty = fields.Float(string="Bom Qty", compute="_value_product_name", store=False,tracking=True, readonly=True)
     require_qty = fields.Float(string="Qty", tracking=True, readonly=True)
 
     @api.depends('bom_line_id')

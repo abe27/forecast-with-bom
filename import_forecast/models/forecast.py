@@ -111,7 +111,7 @@ class Forecast(models.Model):
             req = super().create(obj)
             ### Get Last Sequence Number
             bomSeq = self.env["import_forecast.forecast_bom"].search([("forecast_id", "=", req.id)])
-            print(f"Update Seq: {len(bomSeq)}")
+            # print(f"Update Seq: {len(bomSeq)}")
             lineID = len(bomSeq)
             ### GET PRODUCT TAG ###
             # print(req.partner_id.category_id)
@@ -129,13 +129,13 @@ class Forecast(models.Model):
             prod = self.env["product.product"].search(
                 [("product_tmpl_id", "in", docs), ("detailed_type", "=", "product")]
             )
-            for id in prod:
+            for p in prod:
                 ### create forecast detail
                 prodDetail = self.env["import_forecast.forecast_detail"].create(
                     {
                         "seq": seq,
                         "forecast_id": req.id,
-                        "part_id": id.id,
+                        "part_id": p.id,
                         "qty": 0,
                         "month_1": 0,
                         "month_2": 0,
@@ -144,16 +144,17 @@ class Forecast(models.Model):
                 )
 
                 ### create forecast bom
-                bomLevel1 = self.env["mrp.bom"].search([("product_id", "=", id.id)])
+                bomLevel1 = self.env["mrp.bom"].search([("product_id", "=", p.id)])
                 if bomLevel1:
                     ### get bom line ID
                     bomLine1 = self.env["mrp.bom.line"].search([("bom_id", "=", bomLevel1.id)])
                     if bomLine1:
                         for b1 in bomLine1:
                             lineID += 1
-                            # print(f"{lineID}. ID Lv1: {bomLevel1.id} BOM Line ID: {b1.id} Product: {b1.product_id.name} Qty: {b1.product_qty}")
+                            ### Search BOM Line Level 2
                             bomLevel2 = self.env["mrp.bom"].search([("product_id", "=", b1.product_id.id)])
                             if bomLevel2:
+                                # print(f"Lv.2 : {b1.product_id.name}")
                                 bomLine2 = self.env["mrp.bom.line"].search([("bom_id", "=", bomLevel2.id)])
                                 if bomLine2:
                                     for b2 in bomLine2:
@@ -180,6 +181,8 @@ class Forecast(models.Model):
                                                 }
                                             )
                             else:
+                                ### Create BOM Line Level 1
+                                # print(f"{lineID}. ID Lv1: {bomLevel1.id} BOM Line ID: {b1.id} Product: {b1.product_id.name} Qty: {b1.product_qty}")
                                 forecastBom = self.env["import_forecast.forecast_bom"].search(
                                     [
                                         ("forecast_id", "=", req.id),

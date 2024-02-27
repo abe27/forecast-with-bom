@@ -41,6 +41,7 @@ class ForecastDetail(models.Model):
         forecast.write({"is_status": "0"})    
         return True
     
+    ### Update Method
     def write(self, obj):
         res = super().write(obj)
         ### Get Last Update
@@ -57,7 +58,7 @@ class ForecastDetail(models.Model):
             month_3 += i.month_3
             seq += 1
 
-        print(f"SEQ: {seq}  Qty: {qty} N1: {month_1} N2: {month_2} N3: {month_3}") 
+        # print(f"SEQ: {seq}  Qty: {qty} N1: {month_1} N2: {month_2} N3: {month_3}") 
         #### Month N Update Forecast Month
         forecastMonth = self.env["import_forecast.forecast_month"].search([("forecast_id","=", self.forecast_id.id)])
         seq = 0
@@ -79,6 +80,7 @@ class ForecastDetail(models.Model):
         ### Summary Bom Line
         bom = self.env["import_forecast.forecast_bom"].search([("forecast_detail_id","=",self.id)])
         for r in bom:
-            print(r)
+            print(f"ID: {r.id} BomQty: {r.bom_qty} QTY: {r.require_qty} REQ_QTY: {r.forecast_detail_id.qty}")
+            r.write({"require_qty": r.forecast_detail_id.qty * r.bom_qty})
 
         return res
