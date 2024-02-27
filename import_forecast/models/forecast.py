@@ -100,27 +100,6 @@ class Forecast(models.Model):
             onForecast = datetime.strptime(obj["on_month"], "%Y-%m-%d")
             onMonth = int(onForecast.strftime("%m"))
             onYear = int(onForecast.strftime("%Y"))
-
-            ### create forecast month
-            forecastMonth = None
-            for r in range(0, 4):
-                if onMonth == 13:
-                    onMonth = 1
-                    onYear += 1
-                    
-                remainQty = 0
-                onForecastMonth = f"{onMonth:02d}/{onYear}"
-                forecastMonth = self.env["import_forecast.forecast_month"].search([("name","=", onForecastMonth),("forecast_id","=",req.id)])
-                if len(forecastMonth) == 0:
-                    forecastMonth = self.env["import_forecast.forecast_month"].create({
-                        "seq": (r + 1),
-                        "name": onForecastMonth,
-                        "forecast_id": req.id,
-                        "qty": remainQty,
-                    })
-                # print(f"ID: {r} Month: {onMonth} Year: {onYear}")
-                onMonth += 1
-
             ### Generate Forecast No. ###
             dte = datetime.now()
             runData = self.env["import_forecast.forecast"].search(
@@ -164,16 +143,6 @@ class Forecast(models.Model):
                         "month_3": 0,
                     }
                 )
-
-                # ### create forecast month line
-                # self.env["import_forecast.forecast_month_line"].create({
-                #         "seq": seq,
-                #         "name": p.name,
-                #         "forecast_detail_id": prodDetail.id,
-                #         "forecast_month_id": forecastMonth.id,
-                #         "part_id": p.id,
-                #         "qty": 0,
-                #     })
 
                 ### create forecast bom
                 # print(f"Prod : {p.name}")
@@ -239,6 +208,25 @@ class Forecast(models.Model):
                                         }
                                     )
                 seq += 1
+
+            ### create forecast month
+            for r in range(0, 4):
+                if onMonth == 13:
+                    onMonth = 1
+                    onYear += 1
+                    
+                remainQty = 0
+                onForecastMonth = f"{onMonth:02d}/{onYear}"
+                forecastMonth = self.env["import_forecast.forecast_month"].search([("name","=", onForecastMonth),("forecast_id","=",req.id)])
+                if len(forecastMonth) == 0:
+                    self.env["import_forecast.forecast_month"].create({
+                        "seq": (r + 1),
+                        "name": onForecastMonth,
+                        "forecast_id": req.id,
+                        "qty": remainQty,
+                    })
+                # print(f"ID: {r} Month: {onMonth} Year: {onYear}")
+                onMonth += 1
 
             #### ITEMS,QTY and set Status #####
             isStatus = "0"
