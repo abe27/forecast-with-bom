@@ -27,7 +27,7 @@ class Forecast(models.Model):
         required=True,
     )
     file_forecast_name = fields.Char(size=50, string="File Name", tracking=True)
-    file_forecast = fields.Binary(string="Import Forecast", tracking=True)
+    file_forecast = fields.Binary(string="Import Forecast", tracking=True, help="File Name(csv,xls,xlsx)")
     img_partner = fields.Image(
         compute="_value_partner_image", store=True, readonly=True
     )
