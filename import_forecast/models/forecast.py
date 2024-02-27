@@ -145,7 +145,7 @@ class Forecast(models.Model):
                 )
 
                 ### create forecast bom
-                print(f"Prod : {p.name}")
+                # print(f"Prod : {p.name}")
                 bomLevel1 = self.env["mrp.bom"].search([("product_id", "=", p.id)])
                 if bomLevel1:
                     ### get bom line ID
@@ -154,6 +154,7 @@ class Forecast(models.Model):
                         for b1 in bomLine1:
                             lineID += 1
                             ### Search BOM Line Level 2
+                            # print(f"Forecast BOM lv1 QTY: {b1.product_qty}")
                             bomLevel2 = self.env["mrp.bom"].search([("product_id", "=", b1.product_id.id)])
                             if bomLevel2:
                                 # print(f"Lv.2 : {b1.product_id.name}")
@@ -171,7 +172,7 @@ class Forecast(models.Model):
                                             ]
                                         )
 
-                                        # print(f"Forecast BOM: {len(forecastBom)}")
+                                        # print(f"Forecast BOM lv2 QTY: {b2.product_qty}")
                                         if len(forecastBom) == 0:
                                             self.env["import_forecast.forecast_bom"].create(
                                                 {
@@ -179,7 +180,8 @@ class Forecast(models.Model):
                                                     "forecast_id": req.id,
                                                     "forecast_detail_id": prodDetail.id,
                                                     "bom_id": bomLevel2.id,
-                                                    "bom_line_id": b2.id
+                                                    "bom_line_id": b2.id,
+                                                    "bom_qty": b2.product_qty * b1.product_qty
                                                 }
                                             )
                             else:
@@ -201,7 +203,8 @@ class Forecast(models.Model):
                                             "forecast_id": req.id,
                                             "forecast_detail_id": prodDetail.id,
                                             "bom_id": bomLevel1.id,
-                                            "bom_line_id": b1.id
+                                            "bom_line_id": b1.id,
+                                            "bom_qty": b1.product_qty
                                         }
                                     )
                     
