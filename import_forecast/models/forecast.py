@@ -127,7 +127,8 @@ class Forecast(models.Model):
             seq = 1
             # print(docs)
             prod = self.env["product.product"].search(
-                [("product_tmpl_id", "in", docs), ("detailed_type", "=", "product")]
+                [("product_tmpl_id", "in", docs), ("detailed_type", "=", "product")],
+                order="name asc"
             )
             for p in prod:
                 ### create forecast detail
@@ -144,6 +145,7 @@ class Forecast(models.Model):
                 )
 
                 ### create forecast bom
+                print(f"Prod : {p.name}")
                 bomLevel1 = self.env["mrp.bom"].search([("product_id", "=", p.id)])
                 if bomLevel1:
                     ### get bom line ID

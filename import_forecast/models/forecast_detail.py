@@ -80,7 +80,7 @@ class ForecastDetail(models.Model):
         ### Summary Bom Line
         bom = self.env["import_forecast.forecast_bom"].search([("forecast_detail_id","=",self.id)])
         for r in bom:
-            print(f"ID: {r.id} BomQty: {r.bom_qty} QTY: {r.require_qty} REQ_QTY: {r.forecast_detail_id.qty}")
+            # print(f"ID: {r.id} BomQty: {r.bom_qty} QTY: {r.require_qty} REQ_QTY: {r.forecast_detail_id.qty}")
             r.write({"require_qty": r.forecast_detail_id.qty * r.bom_qty})
 
         return res

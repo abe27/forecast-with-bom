@@ -51,7 +51,15 @@
             <field name="bom_id" ref="mrp_bom_fg_product_abe_5"/>
         </record>
 
-        <!-- ### Bom Line 4 -->
+        <record id="mrp_bom_fg_product_abe_5_line_5" model="mrp.bom.line">
+            <field name="product_id" ref="product_product_abe_4_product"/>
+            <field name="product_qty">15</field>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="sequence">4</field>
+            <field name="bom_id" ref="mrp_bom_fg_product_abe_5"/>
+        </record>
+
+        <!-- ### Bom Line 5 -->
         <record id="mrp_bom_com_product_abe_5_line_4_template" model="product.template">
             <field name="name">TEST BOM COM A005</field>
             <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
