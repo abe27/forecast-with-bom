@@ -167,7 +167,7 @@
         </record>
 
         <record id="product_product_abe_8_product" model="product.product">
-            <field name="name">COM A006</field>
+            <field name="name">COM A007</field>
             <field name="categ_id" ref="product_category_abe_export_1" />
             <field name="product_tag_ids"
                 eval="[Command.set([ref('res_partner_tag_abe_101'),ref('res_partner_tag_vcs_101')])]" />
@@ -178,7 +178,7 @@
             <field name="uom_id" ref="uom.product_uom_unit" />
             <field name="uom_po_id" ref="uom.product_uom_unit" />
             <field name="default_code">1801W003XC5U</field>
-            <field name="description_sale">A006</field>
+            <field name="description_sale">A007</field>
             <field name="image_1920" type="base64" file="import_forecast/static/description/inventory.jpg"/>
         </record>
     </data>
