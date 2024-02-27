@@ -13,6 +13,7 @@ class ForecastMonth(models.Model):
     # part_id = fields.Many2one('product.product', string="Part No", tracking=True, readonly=True)
     qty = fields.Float(string="Qty", tracking=True, readonly=True)
     remain_date = fields.Datetime(string="Remain Date", tracking=True, default=fields.datetime.now())
+    # month_line_ids = fields.One2many("import_forecast.forecast_month_line","forecast_month_id",string="Product Line",required=True,tracking=True,)
 
 class ForecastBom(models.Model):
     _name = "import_forecast.forecast_bom"
