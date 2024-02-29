@@ -16,7 +16,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'abe_backend_theme', 'stock','product','mrp','web', 'mail'],
+    'depends': ['base', 'abe_backend_theme','anita_login', 'stock','product','mrp','web', 'mail'],
 
     # always loaded
     'data': [
