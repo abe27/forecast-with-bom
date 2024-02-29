@@ -101,7 +101,7 @@
 
                             <div id="username-field" class="field-wrapper input">
                                 <div class="d-flex justify-content-between">
-                                    <label for="username">用户名</label>
+                                    <label for="username">User</label>
                                 </div>
                                 <svg class="feather feather-user" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
@@ -112,7 +112,7 @@
 
                             <div id="password-field" class="field-wrapper input mb-2">
                                 <div class="d-flex justify-content-between">
-                                    <label for="password">密码</label>
+                                    <label for="password">Password</label>
                                 </div>
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-lock">
@@ -133,7 +133,7 @@
                             
                             <div class="d-sm-flex justify-content-between">
                                 <div class="field-wrapper">
-                                    <button type="submit" class="btn btn-primary" value="">登录</button>
+                                    <button type="submit" class="btn btn-primary" value="">Login</button>
                                     <t t-if="debug">
                                         <button type="submit" name="redirect" value="/web/become" class="btn btn-link btn-sm btn-block">Log in as superuser</button>
                                     </t>

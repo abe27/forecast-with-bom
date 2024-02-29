@@ -72,7 +72,7 @@ class AdminHome(Home):
         
         # add extra info to login page
         values['title'] = ir_config.get_param(
-            "anita_theme_setting.window_default_title", "OpenErpNext")
+            "anita_theme_setting.window_default_title", "Authentication")
         values['powered_by'] = ir_config.get_param("powered_by", "OpenErpNext")
 
         response = request.render(login_template, values)
