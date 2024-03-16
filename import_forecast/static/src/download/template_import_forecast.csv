@@ -1,0 +1,4 @@
+Import Forecast,,,,,,,,,,,,
+Item,Part Code,Part No.,Part Name,Supplier,Model,Rev.0,Rev.1,Rev.2,Rev.3,M1,M2,M3
+1,SKC-240-P-12,TC882-8100D,Hex Nut M12*1.75,BKS,Thresher,200,0,0,0,1000,2000,300
+2,SKC-401-02,TC882-8100AA,"Hex, Nut (M8x1.25)",SNJ,DC95/70,40000,0,0,0,1001,2001,301

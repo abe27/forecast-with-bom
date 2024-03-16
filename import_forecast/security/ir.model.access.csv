@@ -2,4 +2,5 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_import_forecast_forecast,import_forecast.forecast,model_import_forecast_forecast,base.group_user,1,1,1,1
 access_import_forecast_forecast_detail,import_forecast.forecast_detail,model_import_forecast_forecast_detail,base.group_user,1,1,1,1
 access_import_forecast_forecast_month,import_forecast.forecast_month,model_import_forecast_forecast_month,base.group_user,1,1,1,1
+access_import_forecast_forecast_raw_month,import_forecast.forecast_raw_month,model_import_forecast_forecast_raw_month,base.group_user,1,1,1,1
 access_import_forecast_forecast_bom,import_forecast.forecast_bom,model_import_forecast_forecast_bom,base.group_user,1,1,1,1

@@ -7,6 +7,14 @@
       <field name="context">{}</field>
     </record>
 
+    <record model="ir.actions.act_window" id="forecast_raw_month_action_window">
+      <field name="name">Forecasts Raw Month</field>
+      <field name="res_model">import_forecast.forecast_raw_month</field>
+      <field name="view_mode">tree,form</field>
+      <field name="context">{}</field>
+    </record>
+
+
     <record model="ir.actions.act_window" id="forecast_detail_action_window">
       <field name="name">นำเข้าข้อมูล Forecast Detail</field>
       <field name="res_model">import_forecast.forecast_detail</field>
@@ -37,17 +45,45 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- <record model="ir.actions.server" id="action_approve_forecast">
+      <field name="name">Approve Forecast</field>
+      <field name="model_id" ref="model_import_forecast_forecast"/>
+      <field name="binding_model_id" ref="model_import_forecast_forecast"/>
+      <field name="state">code</field>
+      <field name="code">records.action_approve_forecast()</field>
+      <field name="binding_view_types">form</field>
+    </record> -->
+
+    <!-- <record model="ir.actions.server" id="action_reject_forecast">
+      <field name="name">Reject Forecast</field>
+      <field name="model_id" ref="model_import_forecast_forecast"/>
+      <field name="binding_model_id" ref="model_import_forecast_forecast"/>
+      <field name="state">code</field>
+      <field name="code">records.action_reject_forecast()</field>
+      <field name="binding_view_types">form</field>
+    </record> -->
+
+    <record model="ir.actions.server" id="action_reload_forecast">
+      <field name="name">Refresh Forecast Item</field>
+      <field name="model_id" ref="model_import_forecast_forecast"/>
+      <field name="binding_model_id" ref="model_import_forecast_forecast"/>
+      <field name="state">code</field>
+      <field name="code">records.action_reload_forecast()</field>
+      <field name="binding_view_types">form</field>
+    </record>
+
     <!-- Top menu item -->
     <menuitem name="Import Forecast" web_icon="import_forecast,static/description/icon.png" sequence="0" id="import_forecast.menu_root" />
     <!-- menu categories -->
     <menuitem name="Forecasts" id="import_forecast.menu_forecasts" sequence="0" parent="import_forecast.menu_root" />
     <menuitem name="Products" id="import_forecast.menu_products" sequence="1" parent="import_forecast.menu_root" />
-    <menuitem name="Reports" id="import_forecast.menu_reports" sequence="2" parent="import_forecast.menu_root" />
+    <!-- <menuitem name="Reports" id="import_forecast.menu_reports" sequence="2" parent="import_forecast.menu_root" /> -->
     <!-- actions -->
     <menuitem name="Forecasts" id="import_forecast.menu_forecast_list" sequence="0" parent="import_forecast.menu_forecasts" action="forecast_action_window" />
+    <menuitem name="Forecasts On Month" id="import_forecast.menu_forecast_on_month_list" sequence="1" parent="import_forecast.menu_forecasts" action="forecast_raw_month_action_window" />
     <menuitem name="Products" id="import_forecast.menu_product_list" sequence="0" parent="import_forecast.menu_products" action="forecast_product_action_window" />
     <menuitem name="Bills of Materials" id="import_forecast.menu_bom_list" sequence="1" parent="import_forecast.menu_products" action="forecast_bill_of_materials_action_window" />
-    <menuitem name="Summary By Month" id="import_forecast.menu_summary" sequence="0" parent="import_forecast.menu_reports" action="forecast_summary_month_action_window" />
-    <menuitem name="Products BOM" id="import_forecast.menu_product_bom" sequence="1" parent="import_forecast.menu_reports" action="forecast_product_bom_action_window" />
+    <!-- <menuitem name="Summary By Month" id="import_forecast.menu_summary" sequence="0" parent="import_forecast.menu_reports" action="forecast_summary_month_action_window" />
+    <menuitem name="Products BOM" id="import_forecast.menu_product_bom" sequence="1" parent="import_forecast.menu_reports" action="forecast_product_bom_action_window" /> -->
   </data>
 </odoo>

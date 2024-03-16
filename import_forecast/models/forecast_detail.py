@@ -81,6 +81,11 @@ class ForecastDetail(models.Model):
         bom = self.env["import_forecast.forecast_bom"].search([("forecast_detail_id","=",self.id)])
         for r in bom:
             # print(f"ID: {r.id} BomQty: {r.bom_qty} QTY: {r.require_qty} REQ_QTY: {r.forecast_detail_id.qty}")
-            r.write({"require_qty": r.forecast_detail_id.qty * r.bom_qty})
+            r.write({
+                "require_qty": r.forecast_detail_id.qty * r.bom_qty,
+                "require_month_1_qty": r.forecast_detail_id.month_1 * r.bom_qty,
+                "require_month_2_qty": r.forecast_detail_id.month_2 * r.bom_qty,
+                "require_month_3_qty": r.forecast_detail_id.month_3 * r.bom_qty,
+            })
 
         return res

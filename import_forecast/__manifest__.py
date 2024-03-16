@@ -16,7 +16,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'abe_backend_theme','anita_login', 'stock','product','mrp','web', 'mail'],
+    'depends': ['base', 'stock','product','mrp','web', 'mail','sh_message'],
 
     # always loaded
     'data': [
@@ -26,12 +26,13 @@
         'views/forecast_view.xml',
         'views/forecast_detail_view.xml',
         'views/forecast_detail_bom.xml',
-        'views/product_tag.xml',
         'views/forecast_month.xml',
         'views/forecast_bom_line.xml',
         # 'demo/partner.xml',
         # 'demo/part_category.xml',
         # 'demo/part_tag.xml',
+        'views/product.xml',
+        'views/forecast_raw_month.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

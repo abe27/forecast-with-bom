@@ -11,24 +11,21 @@
                             <div class="oe_kanban_global_click">
                                 <div class="row">
                                     <div class="col-3">
-                                        <field name="img_partner" widget="image"
-                                            options="{'size': [95, 95]}" />
+                                        <field name="img_partner" widget="image" options="{'size': [95, 95]}" />
                                     </div>
                                     <div class="col">
-                                        <div class="">
-                                            <div class="p-2">
-                                                <div class="p-1">
-                                                    <field name="partner_id" class="text-primary" />
+                                        <div class="p-2">
+                                            <div class="mx-4">
+                                                <field name="partner_id" class="text-primary" />
+                                            </div>
+                                            <div class="mx-4">On Month:<field name="_on_month" class="text-info" />
+                                            </div>
+                                            <div class="row mx-2 pt-2">
+                                                <div class="col-4 p-1">
+                                                    <field name="revise_level" string="Revise:" widget="badge" />
                                                 </div>
-                                                <div class="p-1">On Month:<field name="_on_month" class="text-info" />
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-4">
-                                                        <field name="revise_level" string="Revise:" widget="badge" />
-                                                    </div>
-                                                    <div class="col-2">
-                                                        <field name="is_status" widget="badge" decoration-success="is_status == '2'" decoration-primary="is_status == '1'" decoration-danger="is_status == '0'"/>
-                                                    </div>
+                                                <div class="col-2 p-1">
+                                                    <field name="is_status" widget="badge" decoration-success="is_status == '2'" decoration-primary="is_status == '1'" decoration-danger="is_status == '0'"/>
                                                 </div>
                                             </div>
                                         </div>
@@ -60,13 +57,16 @@
             <field name="arch" type="xml">
                 <form>
                     <header class="d-flex d-flex justify-content-end">
-                        <field name="is_status" widget="statusbar"  />
+                        <button name="action_download_template_forecast" class="btn-info" icon="fa-download" type="object" string="Download Template"/>
+                        <button name="action_approve_forecast" confirm="คุณต้องการที่จะ Approve Forecast นี้ใช่หรือไม่?" class="btn-success" icon="fa-check" type="object" string="Approve"/>
+                        <button name="action_reject_forecast" confirm="คุณต้องการที่จะ Reject Forecast นี้ใช่หรือไม่?" class="btn-danger" icon="fa-times" type="object" string="Reject"/>
+                        <field name="is_status" widget="statusbar" />
                     </header>
                     <sheet>
                         <group col="2">
                             <group col="1">
                                 <group>
-                                    <field name="partner_id" readonly="is_status != '0'"/>
+                                    <field name="partner_id" attrs="{'readonly':[('is_status','!=', '0')]}"/>
                                 </group>
                                 <group>
                                     <field name="partner_street" string="Street" class="text-info" />
@@ -80,16 +80,14 @@
                                     </group>
                                 </group>
                                 <group>
-                                    <field name="partner_country_id" string="Country"
-                                        class="text-info" />
+                                    <field name="partner_country_id" string="Country" class="text-info" />
                                 </group>
                                 <group col="2">
                                     <group>
                                         <field name="partner_phone" string="Phone" class="text-info" />
                                     </group>
                                     <group>
-                                        <field name="partner_mobile" string="Mobile"
-                                            class="text-info" />
+                                        <field name="partner_mobile" string="Mobile" class="text-info" />
                                     </group>
                                 </group>
                                 <group>
@@ -104,17 +102,16 @@
                                 <separator colspan="1" />
                             </group>
                             <group>
-                                <field name="img_partner" widget="image" class="oe_avatar" string=""
-                                    options="{'size': [250, 250]}" />
+                                <field name="img_partner" widget="image" class="oe_avatar" string="" options="{'size': [250, 250]}" />
                             </group>
                         </group>
                         <separator colspan="4" />
                         <group>
                             <group>
-                                <field name="on_month" widget="date" readonly="is_status != '0'"/>
+                                <field name="on_month" widget="date" attrs="{'readonly':[('is_status','!=', '0')]}"/>
                             </group>
                             <group col="1">
-                                <field name="revise_level" readonly="is_status != '0'"/>
+                                <field name="revise_level" />
                             </group>
                         </group>
                         <group col="4">

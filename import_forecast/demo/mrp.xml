@@ -3,8 +3,8 @@
     <data noupdate="1">
         <!-- Resource: mrp.bom -->
         <record id="product_product_abe_5_product_template" model="product.template">
-            <field name="name">TEST BOM FG 001</field>
-            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+            <field name="name">TEST BOM FG 001 Lv1</field>
+            <field name="route_ids" eval="[Command.set([ref('mrp.route_warehouse0_manufacture')])]"/>
         </record>
 
         <!-- ### Bom Product FG -->
@@ -12,9 +12,9 @@
             <field name="product_tmpl_id" ref="product_product_abe_5_product_template"/>
             <field name="product_id" ref="product_product_abe_5_product"/>
             <field name="product_uom_id" ref="uom.product_uom_unit"/>
-            <field name="sequence">3</field>
-            <field name="consumption">flexible</field>
-            <field name="days_to_prepare_mo">3</field>
+            <field name="sequence">10</field>
+            <!-- <field name="consumption">flexible</field>
+            <field name="days_to_prepare_mo">3</field> -->
         </record>
         <!-- ### Bom Line ### -->
         <record id="mrp_bom_fg_product_abe_5_line_1" model="mrp.bom.line">
@@ -55,23 +55,23 @@
             <field name="product_id" ref="product_product_abe_4_product"/>
             <field name="product_qty">15</field>
             <field name="product_uom_id" ref="uom.product_uom_unit"/>
-            <field name="sequence">4</field>
+            <field name="sequence">5</field>
             <field name="bom_id" ref="mrp_bom_fg_product_abe_5"/>
         </record>
 
         <!-- ### Bom Line 5 -->
         <record id="mrp_bom_com_product_abe_5_line_4_template" model="product.template">
-            <field name="name">TEST BOM COM A005 FG001</field>
-            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+            <field name="name">TEST BOM COM A005 FG001 Lv2</field>
+            <field name="route_ids" eval="[Command.set([ref('mrp.route_warehouse0_manufacture')])]"/>
         </record>
 
         <record id="mrp_bom_com_product_abe_5_line_4" model="mrp.bom">
             <field name="product_tmpl_id" ref="mrp_bom_com_product_abe_5_line_4_template"/>
             <field name="product_id" ref="product_product_abe_4_product"/>
             <field name="product_uom_id" ref="uom.product_uom_unit"/>
-            <field name="sequence">3</field>
-            <field name="consumption">flexible</field>
-            <field name="days_to_prepare_mo">3</field>
+            <field name="sequence">11</field>
+            <!-- <field name="consumption">flexible</field>
+            <field name="days_to_prepare_mo">3</field> -->
         </record>
 
         <!-- ### Bom line 4 detail  -->
@@ -79,21 +79,21 @@
             <field name="product_id" ref="product_product_abe_4_0_product"/>
             <field name="product_qty">20</field>
             <field name="product_uom_id" ref="uom.product_uom_unit"/>
-            <field name="sequence">4</field>
+            <field name="sequence">1</field>
             <field name="bom_id" ref="mrp_bom_com_product_abe_5_line_4"/>
         </record>
         <record id="mrp_bom_fg_product_abe_5_line_4_2" model="mrp.bom.line">
             <field name="product_id" ref="product_product_abe_4_1_product"/>
             <field name="product_qty">50</field>
             <field name="product_uom_id" ref="uom.product_uom_unit"/>
-            <field name="sequence">4</field>
+            <field name="sequence">2</field>
             <field name="bom_id" ref="mrp_bom_com_product_abe_5_line_4"/>
         </record>
 
         <!-- Resource: mrp.bom product template -->
         <record id="product_product_abe_6_product_template" model="product.template">
-            <field name="name">TEST BOM FG 002</field>
-            <field name="route_ids" eval="[Command.link(ref('mrp.route_warehouse0_manufacture'))]"/>
+            <field name="name">TEST BOM FG 002 Lv1</field>
+            <field name="route_ids" eval="[Command.set([ref('mrp.route_warehouse0_manufacture')])]"/>
         </record>
 
         <!-- ### Bom Product FG -->
@@ -101,9 +101,9 @@
             <field name="product_tmpl_id" ref="product_product_abe_6_product_template"/>
             <field name="product_id" ref="product_product_abe_6_product"/>
             <field name="product_uom_id" ref="uom.product_uom_unit"/>
-            <field name="sequence">3</field>
-            <field name="consumption">flexible</field>
-            <field name="days_to_prepare_mo">3</field>
+            <field name="sequence">12</field>
+            <!-- <field name="consumption">flexible</field>
+            <field name="days_to_prepare_mo">3</field> -->
         </record>
         <!-- ### Bom Line ### -->
         <record id="mrp_bom_fg_product_abe_6_line_1" model="mrp.bom.line">
@@ -121,6 +121,68 @@
             <field name="product_uom_id" ref="uom.product_uom_unit"/>
             <field name="sequence">2</field>
             <field name="bom_id" ref="mrp_bom_fg_product_abe_6"/>
+            <!-- <field name="operation_id" ref="mrp.mrp_routing_workcenter_5"/> -->
+        </record>
+
+        <!-- Resource: mrp.bom product template -->
+        <record id="product_product_abe_8_product_template" model="product.template">
+            <field name="name">TEST BOM COM A007 Lv2</field>
+            <field name="route_ids" eval="[Command.set([ref('mrp.route_warehouse0_manufacture')])]"/>
+        </record>
+
+        <record id="mrp_bom_fg_product_abe_7" model="mrp.bom">
+            <field name="product_tmpl_id" ref="product_product_abe_8_product_template"/>
+            <field name="product_id" ref="product_product_abe_8_product"/>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="sequence">13</field>
+        </record>
+
+        <record id="mrp_bom_fg_product_abe_7_line_1" model="mrp.bom.line">
+            <field name="product_id" ref="product_product_abe_9_product"/>
+            <field name="product_qty">15</field>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="sequence">1</field>
+            <field name="bom_id" ref="mrp_bom_fg_product_abe_7"/>
+            <!-- <field name="operation_id" ref="mrp.mrp_routing_workcenter_5"/> -->
+        </record>
+
+        <record id="mrp_bom_fg_product_abe_7_line_2" model="mrp.bom.line">
+            <field name="product_id" ref="product_product_abe_10_product"/>
+            <field name="product_qty">50</field>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="sequence">2</field>
+            <field name="bom_id" ref="mrp_bom_fg_product_abe_7"/>
+            <!-- <field name="operation_id" ref="mrp.mrp_routing_workcenter_5"/> -->
+        </record>
+
+        <!-- Resource: mrp.bom product template -->
+        <record id="mrp_bom_fg_product_abe_7_line_2_template" model="product.template">
+            <field name="name">TEST BOM COM A007 Lv3</field>
+            <field name="route_ids" eval="[Command.set([ref('mrp.route_warehouse0_manufacture')])]"/>
+        </record>
+
+        <record id="mrp_bom_fg_product_abe_8" model="mrp.bom">
+            <field name="product_tmpl_id" ref="mrp_bom_fg_product_abe_7_line_2_template"/>
+            <field name="product_id" ref="product_product_abe_10_product"/>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="sequence">14</field>
+        </record>
+
+        <record id="mrp_bom_fg_product_abe_8_line_1" model="mrp.bom.line">
+            <field name="product_id" ref="product_product_abe_11_1_product"/>
+            <field name="product_qty">15</field>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="sequence">1</field>
+            <field name="bom_id" ref="mrp_bom_fg_product_abe_8"/>
+            <!-- <field name="operation_id" ref="mrp.mrp_routing_workcenter_5"/> -->
+        </record>
+
+        <record id="mrp_bom_fg_product_abe_8_line_2" model="mrp.bom.line">
+            <field name="product_id" ref="product_product_abe_11_2_product"/>
+            <field name="product_qty">50</field>
+            <field name="product_uom_id" ref="uom.product_uom_unit"/>
+            <field name="sequence">2</field>
+            <field name="bom_id" ref="mrp_bom_fg_product_abe_8"/>
             <!-- <field name="operation_id" ref="mrp.mrp_routing_workcenter_5"/> -->
         </record>
 
