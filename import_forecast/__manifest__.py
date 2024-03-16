@@ -16,7 +16,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'stock','product','mrp','web', 'mail','sh_message'],
+    'depends': ['base', 'stock','product','mrp','web', 'mail','sh_message', 'abe_backend_theme'],
 
     # always loaded
     'data': [
